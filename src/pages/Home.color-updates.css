@@ -1,0 +1,74 @@
+/* ============================================
+   Chilltree Clean Luxury Color System Updates
+   ============================================ */
+
+/* Universal Button Styling */
+.premium-btn {
+  background: linear-gradient(90deg, #F5D76E, #C9A227) !important;
+  color: #0B2C5D !important;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.3);
+}
+
+.premium-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Trust Badge Updates */
+.trust-badge {
+  background: linear-gradient(90deg, #F5D76E, #C9A227) !important;
+  color: #0B2C5D !important;
+}
+
+/* Text Hierarchy Updates */
+.text-primary { color: #0B2C5D !important; }
+.text-secondary { color: #4A6A8C !important; }
+.text-muted { color: #8FA0B5 !important; }
+.text-on-dark { color: #FFFFFF !important; }
+.text-subtle { color: #C8D3E0 !important; }
+
+/* Section Backgrounds */
+.hero-section {
+  background: radial-gradient(circle at 30% 40%, rgba(201,162,39,0.12), transparent 45%), 
+              linear-gradient(180deg, #0B2C5D 0%, #071426 100%) !important;
+}
+
+.trust-strip {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid rgba(11,44,93,0.08) !important;
+}
+
+.subscribe-section {
+  background: linear-gradient(180deg, #0F6B4F 0%, #0B2C5D 100%) !important;
+}
+
+.premium-collection-section {
+  background: linear-gradient(180deg, #EEF3F9 0%, #F8FAFC 100%) !important;
+}
+
+.trust-section {
+  background: #F8FAFC !important;
+}
+
+/* Product Card Updates */
+.premium-card {
+  background: linear-gradient(180deg, #1B3554 0%, #0F223A 100%) !important;
+  border: 1px solid rgba(201, 162, 39, 0.2) !important;
+}
+
+/* Icon Updates */
+.trust-icon-gold {
+  background: linear-gradient(135deg, #F5D76E 0%, #C9A227 100%) !important;
+  color: #0B2C5D !important;
+}
+
+.trust-icon-blue {
+  background: linear-gradient(135deg, #0B2C5D 0%, #1E4A7C 100%) !important;
+  color: #FFFFFF !important;
+}

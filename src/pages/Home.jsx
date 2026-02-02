@@ -162,7 +162,7 @@ export default function Home() {
                     textShadow: "0 0 40px rgba(245, 215, 110, 0.2)",
                   }}
                 >
-                  Premium
+                  Clean Energy
                 </span>{" "}
                 <span
                   style={{
@@ -170,7 +170,7 @@ export default function Home() {
                     textShadow: "0 8px 32px rgba(11, 44, 93, 0.6), 0 0 60px rgba(245, 215, 110, 0.1)",
                   }}
                 >
-                  Energy.
+                  Without the
                 </span>{" "}
                 <span
                   style={{
@@ -178,7 +178,7 @@ export default function Home() {
                     textShadow: "0 8px 32px rgba(11, 44, 93, 0.4), 0 0 40px rgba(245, 215, 110, 0.1)",
                   }}
                 >
-                  Naturally.
+                  Crash.
                 </span>
               </h1>
               <div
@@ -197,8 +197,8 @@ export default function Home() {
             <div
               className="glass-card"
               style={{
-                background: "rgba(248, 250, 252, 0.9)",
-                backdropFilter: "blur(20px)",
+                background: "rgba(255,255,255,0.08)",
+                backdropFilter: "blur(16px)",
                 border: "1px solid rgba(201, 162, 39, 0.2)",
                 padding: "2rem",
                 borderRadius: "var(--radius-lg)",
@@ -212,28 +212,67 @@ export default function Home() {
                   margin: 0,
                   fontFamily: "var(--font-body)",
                   fontWeight: 500,
+                  textShadow: '0 4px 16px rgba(11, 44, 93, 0.3)'
                 }}
               >
-                Experience the perfect fusion of nature and science. Chilltree delivers premium energy that elevates your mind, body, and performance to extraordinary levels.
+                Lab-tested botanics that deliver calm, focus, and clarity in minutes.
               </p>
+              
+              {/* Micro-proof line */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  marginTop: '1rem',
+                  fontSize: '0.875rem',
+                  color: 'rgba(255,255,255,0.7)',
+                  fontFamily: 'var(--font-body)'
+                }}
+              >
+                <span>10,000+ bottles shipped</span>
+                <span>•</span>
+                <span>Batch #0423 tested</span>
+                <span>•</span>
+                <span>No synthetic stimulants</span>
+              </div>
             </div>
             
-            {/* Premium CTA */}
-            <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-              <button className="premium-btn" style={{ fontSize: "1.125rem", padding: "1.25rem 3rem" }}>
-                Shop Premium Collection
-              </button>
-              <div
-                className="trust-badge"
+            {/* Dual CTA Buttons */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                alignItems: 'center'
+              }}
+            >
+              <button
+                className="premium-btn"
                 style={{
-                  background: "var(--gradient-green)",
-                  color: "white",
-                  border: "none",
+                  fontSize: "1.25rem",
+                  padding: "1.5rem 3rem",
+                  background: "linear-gradient(135deg, var(--accent-gold) 0%, var(--gold-light) 100%)",
+                  color: "var(--primary-blue)",
+                  fontWeight: 700,
+                  boxShadow: "0 8px 32px rgba(201, 162, 39, 0.4), 0 4px 16px rgba(201, 162, 39, 0.3)"
                 }}
               >
-                <span>💰</span>
-                <span>Save 20%</span>
-              </div>
+                Start My Subscription
+              </button>
+              <button
+                className="premium-btn"
+                style={{
+                  fontSize: "1.125rem",
+                  padding: "1.25rem 3rem",
+                  background: "transparent",
+                  color: "#FFFFFF",
+                  border: "2px solid rgba(255,255,255,0.3)",
+                  fontWeight: 600
+                }}
+              >
+                One-time Purchase
+              </button>
             </div>
           </div>
 
@@ -332,6 +371,84 @@ export default function Home() {
         `}</style>
       </section>
 
+      {/* Trust Strip - Directly Under Hero */}
+      <section
+        className="trust-strip"
+        style={{
+          width: "100%",
+          background: "var(--surface)",
+          padding: "2rem",
+          borderBottom: "1px solid var(--neutral-silver)",
+          position: "relative",
+          overflow: "hidden"
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "2rem"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              color: "var(--text-secondary)"
+            }}
+          >
+            <span style={{ fontSize: "1.2rem" }}>✓</span>
+            <span>Lab Tested</span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              color: "var(--text-secondary)"
+            }}
+          >
+            <span style={{ fontSize: "1.2rem" }}>🏆</span>
+            <span>Award Winning</span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              color: "var(--text-secondary)"
+            }}
+          >
+            <span style={{ fontSize: "1.2rem" }}>🌿</span>
+            <span>Premium Botanics</span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              color: "var(--text-secondary)"
+            }}
+          >
+            <span style={{ fontSize: "1.2rem" }}>📦</span>
+            <span>10,000+ Orders</span>
+          </div>
+        </div>
+      </section>
+
       {/* Premium Collection */}
       <section
         className="premium-collection-section"
@@ -407,7 +524,37 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Product Grid */}
+        {/* Most Popular Choices Label */}
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "2rem",
+            position: "relative",
+            zIndex: 2,
+            maxWidth: "1400px",
+            margin: "0 auto 2rem auto",
+            padding: "0 2rem"
+          }}
+        >
+          <div
+            style={{
+              display: "inline-block",
+              background: "linear-gradient(135deg, var(--accent-gold) 0%, var(--gold-light) 100%)",
+              color: "var(--primary-blue)",
+              padding: "0.5rem 1.5rem",
+              borderRadius: "999px",
+              fontSize: "0.875rem",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+              boxShadow: "0 4px 16px rgba(201, 162, 39, 0.3)"
+            }}
+          >
+            Most Popular Choices
+          </div>
+        </div>
+
+        {/* Product Grid - 3 Products Only */}
         <div
           style={{
             display: "grid",
@@ -416,12 +563,12 @@ export default function Home() {
             marginBottom: "4rem",
             position: "relative",
             zIndex: 2,
-            maxWidth: "1400px",
-            margin: "0 auto",
+            maxWidth: "1200px",
+            margin: "0 auto 4rem auto",
             padding: "0 2rem"
           }}
         >
-          {featuredProducts.map((product, index) => (
+          {featuredProducts.slice(0, 3).map((product, index) => (
             <div
               key={product.id}
               className="premium-card premium-fade-in-up"
@@ -447,6 +594,8 @@ export default function Home() {
                     height: "250px",
                     objectFit: "cover",
                     transition: "transform 0.4s ease",
+                    border: "2px solid #000000",
+                    borderRadius: "12px",
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.transform = "scale(1.05)";
@@ -509,7 +658,7 @@ export default function Home() {
               <p
                 style={{
                   fontSize: "1rem",
-                  color: "rgba(255, 255, 255, 0.8)",
+                  color: "#C8D3E0",
                   lineHeight: 1.6,
                   margin: "0 0 1.5rem 0",
                   fontFamily: "var(--font-body)",
@@ -527,10 +676,12 @@ export default function Home() {
                 <div
                   style={{
                     fontSize: "1.25rem",
-                    color: "#F5D76E",
+                    background: "linear-gradient(90deg, #F5D76E, #C9A227)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
                     fontWeight: 700,
                     fontFamily: "var(--font-heading)",
-                    textShadow: "0 0 20px rgba(245, 215, 110, 0.3)",
                   }}
                 >
                   ${product.price}
@@ -538,12 +689,23 @@ export default function Home() {
                 <div
                   style={{
                     fontSize: "0.875rem",
-                    color: "rgba(255, 255, 255, 0.6)",
+                    color: "#8FA0B5",
                     textDecoration: "line-through",
                     marginTop: "0.5rem",
                   }}
                 >
                   Regular ${Math.round(product.price * 1.25)}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "var(--support-green)",
+                    fontWeight: 600,
+                    marginTop: "0.5rem",
+                    fontFamily: "var(--font-body)"
+                  }}
+                >
+                  Save 20% with subscription
                 </div>
               </div>
               
@@ -701,11 +863,49 @@ export default function Home() {
               fontSize: "1.25rem",
               color: "rgba(255, 255, 255, 0.9)",
               maxWidth: "700px",
-              margin: "0 auto 3rem auto",
+              margin: "0 auto 1rem auto",
               fontFamily: "var(--font-body)",
             }}
           >
             Join our subscription program and enjoy premium savings, exclusive benefits, and never run out of your favorite wellness products.
+          </p>
+          
+          {/* Savings Highlight */}
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.15)",
+              backdropFilter: "blur(16px)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              padding: "1rem 2rem",
+              borderRadius: "12px",
+              marginBottom: "2rem",
+              display: "inline-block"
+            }}
+          >
+            <p
+              style={{
+                fontSize: "1.125rem",
+                color: "white",
+                margin: 0,
+                fontFamily: "var(--font-body)",
+                fontWeight: 600
+              }}
+            >
+              Subscribers save ₹1,200 per month vs one-time purchase.
+            </p>
+          </div>
+          
+          {/* Commitment Note */}
+          <p
+            style={{
+              fontSize: "0.875rem",
+              color: "rgba(255, 255, 255, 0.7)",
+              margin: "0 0 2rem 0",
+              fontFamily: "var(--font-body)",
+              fontStyle: "italic"
+            }}
+          >
+            Minimum commitment applies.
           </p>
           
           {/* Benefits */}
@@ -1013,11 +1213,55 @@ export default function Home() {
                   color: "var(--text-secondary)",
                   fontFamily: "var(--font-body)",
                   lineHeight: 1.6,
-                  margin: 0,
+                  margin: "0 0 1rem 0",
                 }}
               >
                 Independent lab verification ensures every batch meets our premium standards
               </p>
+              
+              {/* Batch Info */}
+              <div
+                style={{
+                  background: "rgba(201, 162, 39, 0.1)",
+                  border: "1px solid rgba(201, 162, 39, 0.2)",
+                  padding: "0.75rem",
+                  borderRadius: "8px",
+                  fontSize: "0.875rem",
+                  color: "var(--text-primary)",
+                  fontFamily: "var(--font-body)",
+                  marginBottom: "1rem"
+                }}
+              >
+                <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>Latest Batch:</div>
+                <div>Batch #0423 • Tested: Oct 15, 2024</div>
+              </div>
+              
+              {/* Lab Report Button */}
+              <button
+                style={{
+                  width: "100%",
+                  padding: "0.75rem",
+                  background: "linear-gradient(135deg, var(--accent-gold) 0%, var(--gold-light) 100%)",
+                  color: "var(--primary-blue)",
+                  border: "none",
+                  borderRadius: "8px",
+                  fontSize: "0.875rem",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  fontFamily: "var(--font-body)",
+                  transition: "all var(--transition-smooth)"
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = "translateY(-2px)";
+                  e.target.style.boxShadow = "0 4px 12px rgba(201, 162, 39, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = "translateY(0)";
+                  e.target.style.boxShadow = "none";
+                }}
+              >
+                View Lab Report (PDF)
+              </button>
             </div>
 
             {/* Trust Card 2 */}

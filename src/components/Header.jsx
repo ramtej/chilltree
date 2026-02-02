@@ -27,8 +27,8 @@ export default function Header() {
         right: 0,
         width: "100%",
         zIndex: 1000,
-        borderBottom: "2px solid #cfd8dc",
-        boxShadow: "0 2px 10px rgba(10, 37, 64, 0.08)",
+        borderBottom: "2px solid rgba(11,44,93,0.08)",
+        boxShadow: "0 2px 10px rgba(11, 44, 93, 0.08)",
         minHeight: "90px",
       }}
     >
@@ -63,10 +63,10 @@ export default function Header() {
           position: "absolute",
           left: "50%",
           transform: "translateX(-50%)",
-          backgroundColor: "#cfd8dc",
+          backgroundColor: "rgba(11,44,93,0.05)",
           borderRadius: "999px",
           padding: "0.5rem 1rem",
-          boxShadow: "0 4px 20px rgba(10, 37, 64, 0.12)",
+          boxShadow: "0 4px 20px rgba(11, 44, 93, 0.12)",
         }}
       >
         {navLinks.map((link) => {
@@ -77,24 +77,24 @@ export default function Header() {
               to={link.path}
               style={{
                 textDecoration: "none",
-                color: isActive ? "#FFFFFF" : "#0a2540",
+                color: isActive ? "#FFFFFF" : "#0B2C5D",
                 fontSize: "0.9rem",
                 fontWeight: isActive ? "600" : "400",
                 padding: "0.55rem 1.1rem",
                 borderRadius: "999px",
-                background: isActive ? "linear-gradient(135deg, #0a2540 0%, #0d3a5c 50%, #1e4a73 100%)" : "transparent",
+                background: isActive ? "linear-gradient(135deg, #071426 0%, #0B2C5D 50%, #1E4A7C 100%)" : "transparent",
                 transition: "all 0.2s ease",
                 position: "relative",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.target.style.color = "#0a2540";
-                  e.target.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+                  e.target.style.color = "#0B2C5D";
+                  e.target.style.backgroundColor = "rgba(245, 215, 110, 0.1)";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.target.style.color = "#0a2540";
+                  e.target.style.color = "#0B2C5D";
                   e.target.style.backgroundColor = "transparent";
                 }
               }}
@@ -124,24 +124,24 @@ export default function Header() {
         to="/signin"
         style={{
           textDecoration: "none",
-          background: "linear-gradient(135deg, #d4af37 0%, #e0c050 50%, #e8ce6a 100%)",
-          color: "#0a2540",
+          background: "linear-gradient(135deg, #F5D76E 0%, #C9A227 50%, #F5D76E 100%)",
+          color: "#0B2C5D",
           fontSize: "0.9rem",
           fontWeight: "700",
           padding: "0.55rem 1.5rem",
           borderRadius: "8px",
           transition: "all 0.2s ease",
-          boxShadow: "0 2px 8px rgba(212, 175, 55, 0.3)",
+          boxShadow: "0 2px 8px rgba(245, 215, 110, 0.3)",
         }}
         onMouseEnter={(e) => {
-          e.target.style.background = "linear-gradient(135deg, #e0c050 0%, #e8ce6a 50%, #f0dc84 100%)";
+          e.target.style.background = "linear-gradient(135deg, #F5D76E 0%, #F5D76E 50%, #F5D76E 100%)";
           e.target.style.transform = "translateY(-1px)";
-          e.target.style.boxShadow = "0 4px 12px rgba(212, 175, 55, 0.4)";
+          e.target.style.boxShadow = "0 4px 12px rgba(245, 215, 110, 0.4)";
         }}
         onMouseLeave={(e) => {
-          e.target.style.background = "linear-gradient(135deg, #d4af37 0%, #e0c050 50%, #e8ce6a 100%)";
+          e.target.style.background = "linear-gradient(135deg, #F5D76E 0%, #C9A227 50%, #F5D76E 100%)";
           e.target.style.transform = "translateY(0)";
-          e.target.style.boxShadow = "0 2px 8px rgba(212, 175, 55, 0.3)";
+          e.target.style.boxShadow = "0 2px 8px rgba(245, 215, 110, 0.3)";
         }}
       >
         Sign in
