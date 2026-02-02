@@ -1,6 +1,38 @@
+/* Chilltree brand design tokens — yellow, silver, green, blue */
+:root {
+  --brand-gold: #c9a227;
+  --brand-gold-light: #e5c76b;
+  --brand-gold-dark: #a68521;
+  --brand-silver: #c0c0c0;
+  --brand-silver-light: #e8e8e8;
+  --brand-silver-bg: #f7f8fa;
+  --brand-silver-muted: #9ca3af;
+  --brand-green: #1b7f37;
+  --brand-green-light: #2e9d4a;
+  --brand-green-muted: rgba(27, 127, 55, 0.12);
+  --brand-blue: #0f3460;
+  --brand-blue-mid: #1a4d7a;
+  --brand-blue-light: #2563eb;
+  --brand-blue-muted: rgba(15, 52, 96, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-on-dark: #f1f5f9;
+  --text-on-dark-muted: #94a3b8;
+  --surface: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(15, 52, 96, 0.06);
+  --shadow-md: 0 4px 20px rgba(15, 52, 96, 0.08);
+  --shadow-lg: 0 12px 40px rgba(15, 52, 96, 0.12);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --page-bg: linear-gradient(180deg, var(--brand-silver-bg) 0%, var(--brand-silver-light) 100%);
+  --hero-bg: linear-gradient(152deg, #0a1628 0%, var(--brand-blue) 35%, var(--brand-blue-mid) 65%, var(--brand-blue) 100%);
+}
+
 html {
   overflow-x: hidden;
   max-width: 100vw;
+  scroll-behavior: smooth;
 }
 
 body {

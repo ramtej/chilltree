@@ -1,0 +1,90 @@
+:root {
+  /* Brand Colors - Blue Palette */
+  --blue-900: #0a2540;
+  --blue-800: #0d3a5c;
+  --blue-700: #1e4a73;
+  --blue-600: #2d5a8a;
+  --blue-500: #3d6ba1;
+  --blue-400: #5a8bc4;
+  --blue-300: #7ba5d1;
+  --blue-200: #a0c0e0;
+  --blue-100: #c5d9ed;
+  --blue-50: #e6f0f7;
+
+  /* Brand Colors - Gold Palette */
+  --gold-900: #8b6914;
+  --gold-800: #a67c1a;
+  --gold-700: #c19420;
+  --gold-600: #d4af37;
+  --gold-500: #e0c050;
+  --gold-400: #e8ce6a;
+  --gold-300: #f0dc84;
+  --gold-200: #f5e8a8;
+  --gold-100: #faf4cc;
+  --gold-50: #fdf9e6;
+
+  /* Brand Colors - Green Palette */
+  --green-900: #1b5e20;
+  --green-800: #2e7d32;
+  --green-700: #388e3c;
+  --green-600: #43a047;
+  --green-500: #4caf50;
+  --green-400: #66bb6a;
+  --green-300: #81c784;
+  --green-200: #a5d6a7;
+  --green-100: #c8e6c9;
+  --green-50: #e8f5e9;
+
+  /* Brand Colors - Silver Palette */
+  --silver-900: #37474f;
+  --silver-800: #455a64;
+  --silver-700: #546e7a;
+  --silver-600: #607d8b;
+  --silver-500: #78909c;
+  --silver-400: #90a4ae;
+  --silver-300: #b0bec5;
+  --silver-200: #cfd8dc;
+  --silver-100: #e1e8ed;
+  --silver-50: #f5f7fa;
+
+  /* Semantic Colors */
+  --primary: var(--blue-600);
+  --primary-dark: var(--blue-700);
+  --primary-light: var(--blue-400);
+  --accent: var(--gold-600);
+  --accent-dark: var(--gold-700);
+  --accent-light: var(--gold-400);
+  --success: var(--green-600);
+  --success-light: var(--green-400);
+  --neutral: var(--silver-500);
+  --neutral-light: var(--silver-200);
+  --neutral-bg: var(--silver-50);
+
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: var(--silver-50);
+  --bg-dark: var(--blue-900);
+  --bg-gradient: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 50%, var(--blue-700) 100%);
+  --bg-gradient-gold: linear-gradient(135deg, var(--gold-700) 0%, var(--gold-600) 50%, var(--gold-500) 100%);
+  --bg-gradient-green: linear-gradient(135deg, var(--green-700) 0%, var(--green-600) 50%, var(--green-500) 100%);
+
+  /* Text Colors */
+  --text-primary: var(--blue-900);
+  --text-secondary: var(--silver-700);
+  --text-light: var(--silver-500);
+  --text-on-dark: #ffffff;
+  --text-on-gold: var(--blue-900);
+
+  /* Border Colors */
+  --border-light: var(--silver-200);
+  --border-medium: var(--silver-300);
+  --border-dark: var(--silver-400);
+
+  /* Shadow Colors */
+  --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.08);
+  --shadow-md: 0 4px 15px rgba(10, 37, 64, 0.12);
+  --shadow-lg: 0 8px 30px rgba(10, 37, 64, 0.16);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.3);
+  --shadow-blue: 0 4px 20px rgba(45, 90, 138, 0.3);
+  --shadow-green: 0 4px 20px rgba(67, 160, 71, 0.3);
+}

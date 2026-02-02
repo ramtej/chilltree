@@ -1,0 +1,171 @@
+/* StoreLocator — same format as Home */
+.store-locator-page {
+  min-height: 100vh;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, var(--brand-silver-bg) 0%, var(--brand-silver-light) 100%);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.store-locator-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.store-locator-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.store-locator-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  letter-spacing: -0.03em;
+  color: var(--brand-blue);
+  line-height: 1.2;
+}
+
+.store-locator-search-wrap {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.store-locator-search {
+  width: 100%;
+  padding: 1.125rem 1.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--brand-silver-light);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--brand-blue);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
+  font-family: inherit;
+}
+
+.store-locator-search:focus {
+  border-color: var(--brand-gold);
+  box-shadow: 0 4px 15px rgba(15, 52, 96, 0.12);
+}
+
+.store-locator-search::placeholder {
+  color: var(--brand-silver-muted);
+}
+
+.store-locator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .store-locator-grid {
+    grid-template-columns: 1fr;
+  }
+  .store-locator-map {
+    order: -1;
+    min-height: 400px;
+    position: relative;
+    top: 0;
+  }
+}
+
+.store-locator-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.store-locator-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  border: 1px solid rgba(15, 52, 96, 0.08);
+  cursor: pointer;
+}
+
+.store-locator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-blue-muted);
+}
+
+.store-locator-card-name {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  letter-spacing: -0.01em;
+}
+
+.store-locator-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.store-locator-card-details p {
+  margin: 0;
+}
+
+.store-locator-card-phone {
+  margin-top: 0.5rem;
+  color: var(--brand-green);
+  font-weight: 600;
+}
+
+.store-locator-empty {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  box-shadow: var(--shadow-md);
+}
+
+.store-locator-map {
+  background: var(--brand-silver-light);
+  border-radius: var(--radius);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(15, 52, 96, 0.08);
+  position: sticky;
+  top: 8rem;
+}
+
+.store-locator-map-placeholder {
+  text-align: center;
+  color: var(--brand-green);
+}
+
+.store-locator-map-placeholder .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.store-locator-map-placeholder p:first-of-type {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.store-locator-map-placeholder p:last-of-type {
+  font-size: 0.875rem;
+  margin: 0.5rem 0 0;
+  color: var(--brand-silver-muted);
+}

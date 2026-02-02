@@ -1,0 +1,234 @@
+.subscriptions-page {
+  width: 100%;
+}
+
+.subscriptions-header {
+  margin-bottom: 32px;
+}
+
+.subscriptions-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  letter-spacing: -0.5px;
+}
+
+.subscriptions-header p {
+  margin: 0;
+  font-size: 15px;
+  color: #808080;
+  font-weight: 400;
+}
+
+.subscriptions-table-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #C0C0C0;
+}
+
+.subscriptions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subscriptions-table thead {
+  background: #E8E8E8;
+  border-bottom: 2px solid #C0C0C0;
+}
+
+.subscriptions-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subscriptions-table tbody tr {
+  border-bottom: 1px solid #C0C0C0;
+  transition: background-color 0.2s ease;
+}
+
+.subscriptions-table tbody tr:hover {
+  background-color: #E8E8E8;
+}
+
+.subscriptions-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.subscriptions-table td {
+  padding: 16px 20px;
+  font-size: 15px;
+  color: #666666;
+}
+
+.subscription-user {
+  color: #666666;
+  font-weight: 500;
+}
+
+.subscription-plan {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.subscription-date {
+  color: #808080;
+}
+
+.subscription-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #C0C0C0;
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #4CAF50;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.toggle-switch input:focus + .toggle-slider {
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.toggle-switch:hover .toggle-slider {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-badge.active {
+  background: rgba(76, 175, 80, 0.12);
+  color: #4CAF50;
+  border-color: rgba(76, 175, 80, 0.2);
+}
+
+.status-badge.active::before {
+  background: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.status-badge.cancelled {
+  background: rgba(192, 192, 192, 0.12);
+  color: #A0A0A0;
+  border-color: rgba(192, 192, 192, 0.2);
+}
+
+.status-badge.cancelled::before {
+  background: #A0A0A0;
+  box-shadow: 0 0 0 2px rgba(192, 192, 192, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .subscriptions-table-container {
+    overflow-x: auto;
+  }
+
+  .subscriptions-table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscriptions-header h1 {
+    font-size: 28px;
+  }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px !important;
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.empty-state-content p {
+  margin: 0;
+  color: #808080;
+  font-size: 16px;
+}
+
+.empty-message {
+  font-size: 14px !important;
+  color: #A0A0A0 !important;
+}

@@ -27,8 +27,8 @@ export default function Header() {
         right: 0,
         width: "100%",
         zIndex: 1000,
-        borderBottom: "1px solid rgba(0, 0, 0, 0.05)",
-        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.05)",
+        borderBottom: "2px solid #cfd8dc",
+        boxShadow: "0 2px 10px rgba(10, 37, 64, 0.08)",
         minHeight: "90px",
       }}
     >
@@ -47,7 +47,7 @@ export default function Header() {
           src="/chilltree-logo.png"
           alt="Chill Tree"
           style={{
-            height: "80px",
+            height: "90px",
             width: "auto",
             objectFit: "contain",
           }}
@@ -63,10 +63,10 @@ export default function Header() {
           position: "absolute",
           left: "50%",
           transform: "translateX(-50%)",
-          backgroundColor: "#C0C0C0",
+          backgroundColor: "#cfd8dc",
           borderRadius: "999px",
           padding: "0.5rem 1rem",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+          boxShadow: "0 4px 20px rgba(10, 37, 64, 0.12)",
         }}
       >
         {navLinks.map((link) => {
@@ -77,24 +77,24 @@ export default function Header() {
               to={link.path}
               style={{
                 textDecoration: "none",
-                color: isActive ? "#FFFFFF" : "#000000",
+                color: isActive ? "#FFFFFF" : "#0a2540",
                 fontSize: "0.9rem",
                 fontWeight: isActive ? "600" : "400",
                 padding: "0.55rem 1.1rem",
                 borderRadius: "999px",
-                background: isActive ? "linear-gradient(135deg, #081421, #0F2A44)" : "transparent",
+                background: isActive ? "linear-gradient(135deg, #0a2540 0%, #0d3a5c 50%, #1e4a73 100%)" : "transparent",
                 transition: "all 0.2s ease",
                 position: "relative",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.target.style.color = "#000000";
-                  e.target.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                  e.target.style.color = "#0a2540";
+                  e.target.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.target.style.color = "#000000";
+                  e.target.style.color = "#0a2540";
                   e.target.style.backgroundColor = "transparent";
                 }
               }}
@@ -124,24 +124,24 @@ export default function Header() {
         to="/signin"
         style={{
           textDecoration: "none",
-          backgroundColor: "#0F2A44",
-          color: "#FFFFFF",
+          background: "linear-gradient(135deg, #d4af37 0%, #e0c050 50%, #e8ce6a 100%)",
+          color: "#0a2540",
           fontSize: "0.9rem",
-          fontWeight: "600",
+          fontWeight: "700",
           padding: "0.55rem 1.5rem",
           borderRadius: "8px",
           transition: "all 0.2s ease",
-          boxShadow: "0 2px 8px rgba(15, 42, 68, 0.15)",
+          boxShadow: "0 2px 8px rgba(212, 175, 55, 0.3)",
         }}
         onMouseEnter={(e) => {
-          e.target.style.backgroundColor = "#0B1C2D";
+          e.target.style.background = "linear-gradient(135deg, #e0c050 0%, #e8ce6a 50%, #f0dc84 100%)";
           e.target.style.transform = "translateY(-1px)";
-          e.target.style.boxShadow = "0 4px 12px rgba(15, 42, 68, 0.25)";
+          e.target.style.boxShadow = "0 4px 12px rgba(212, 175, 55, 0.4)";
         }}
         onMouseLeave={(e) => {
-          e.target.style.backgroundColor = "#0F2A44";
+          e.target.style.background = "linear-gradient(135deg, #d4af37 0%, #e0c050 50%, #e8ce6a 100%)";
           e.target.style.transform = "translateY(0)";
-          e.target.style.boxShadow = "0 2px 8px rgba(15, 42, 68, 0.15)";
+          e.target.style.boxShadow = "0 2px 8px rgba(212, 175, 55, 0.3)";
         }}
       >
         Sign in

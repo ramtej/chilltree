@@ -1,0 +1,196 @@
+/* ProductDetails — same format as Home */
+.product-details-page {
+  min-height: 100vh;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  background: var(--page-bg);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.product-details-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.product-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .product-details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.product-details-image-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--brand-silver-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--brand-silver-light);
+}
+
+.product-details-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-details-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.03em;
+  color: var(--brand-blue);
+  line-height: 1.2;
+}
+
+.product-details-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-details-price {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--brand-blue);
+  letter-spacing: -0.02em;
+}
+
+.product-details-price-struck {
+  font-size: 1.25rem;
+  color: var(--brand-green);
+  font-weight: 600;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.product-details-save {
+  font-size: 0.875rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.product-details-desc {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 600px;
+}
+
+.product-details-toggle-wrap {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15, 52, 96, 0.15);
+}
+
+.product-details-toggle-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition);
+  letter-spacing: 0.01em;
+  font-family: inherit;
+}
+
+.product-details-toggle-btn--inactive {
+  background: transparent;
+  color: var(--brand-blue);
+}
+
+.product-details-toggle-btn--inactive:hover {
+  background: var(--brand-silver-bg);
+}
+
+.product-details-toggle-btn--active-one {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-mid) 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(15, 52, 96, 0.3);
+}
+
+.product-details-toggle-btn--active-sub {
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+  color: var(--brand-blue);
+  box-shadow: 0 4px 15px rgba(201, 162, 39, 0.35);
+}
+
+.product-details-add-btn {
+  padding: 1.25rem 3rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.02em;
+  font-family: inherit;
+}
+
+.product-details-add-btn--one-time {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-mid) 100%);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(15, 52, 96, 0.3);
+}
+
+.product-details-add-btn--one-time:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(15, 52, 96, 0.4);
+}
+
+.product-details-add-btn--subscribe {
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+  color: var(--brand-blue);
+  box-shadow: 0 8px 28px rgba(201, 162, 39, 0.35);
+}
+
+.product-details-add-btn--subscribe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(201, 162, 39, 0.45);
+}
+
+.product-details-not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--page-bg);
+  font-family: inherit;
+}
+
+.product-details-not-found h2 {
+  color: var(--brand-blue);
+  font-weight: 700;
+}

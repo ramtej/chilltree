@@ -1,0 +1,290 @@
+/* Shared admin table and header styles for admin pages */
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #123a63;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* Header layout for table pages */
+.stores-header,
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Table container */
+.stores-table-container,
+.products-table-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #c0c0c0;
+}
+
+/* Base table */
+.stores-table,
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stores-table thead,
+.products-table thead {
+  background: #e8e8e8;
+  border-bottom: 2px solid #c0c0c0;
+}
+
+.stores-table th,
+.products-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stores-table tbody tr,
+.products-table tbody tr {
+  border-bottom: 1px solid #c0c0c0;
+  transition: background-color 0.2s ease;
+}
+
+.stores-table tbody tr:hover,
+.products-table tbody tr:hover {
+  background-color: #e8e8e8;
+}
+
+.stores-table tbody tr:last-child,
+.products-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.stores-table td,
+.products-table td {
+  padding: 16px 20px;
+  font-size: 15px;
+  color: #666666;
+  vertical-align: middle;
+  line-height: 1.45;
+}
+
+/* Name / address emphasis */
+.store-name,
+.product-name {
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.store-address,
+.product-category {
+  color: #808080;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #4caf50;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.store-phone {
+  color: #808080;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-badge.active {
+  background: rgba(76, 175, 80, 0.12);
+  color: #4caf50;
+  border-color: rgba(76, 175, 80, 0.2);
+}
+
+.status-badge.active::before {
+  background: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.status-badge.inactive {
+  background: rgba(192, 192, 192, 0.12);
+  color: #a0a0a0;
+  border-color: rgba(192, 192, 192, 0.2);
+}
+
+.status-badge.inactive::before {
+  background: #a0a0a0;
+  box-shadow: 0 0 0 2px rgba(192, 192, 192, 0.2);
+}
+
+/* Action buttons */
+.store-actions,
+.product-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.action-button svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.action-button:hover svg {
+  transform: scale(1.1);
+}
+
+.edit-button {
+  background: rgba(33, 150, 243, 0.08);
+  color: var(--brand-blue-light, #2196f3);
+  border-color: rgba(33, 150, 243, 0.2);
+}
+
+.edit-button:hover {
+  background: rgba(33, 150, 243, 0.15);
+  border-color: rgba(33, 150, 243, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+.edit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(33, 150, 243, 0.2);
+}
+
+.delete-button {
+  background: rgba(255, 160, 0, 0.08);
+  color: #ffa000;
+  border-color: rgba(255, 160, 0, 0.2);
+}
+
+.delete-button:hover {
+  background: rgba(255, 160, 0, 0.15);
+  border-color: rgba(255, 160, 0, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 160, 0, 0.2);
+}
+
+.delete-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(255, 160, 0, 0.2);
+}
+
+/* Empty state styles (used by stores and potentially others) */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px !important;
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.empty-state-content p {
+  margin: 0;
+  color: #808080;
+  font-size: 16px;
+}
+
+.empty-message {
+  font-size: 14px !important;
+  color: #a0a0a0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stores-header,
+  .products-header {
+    flex-direction: column;
+  }
+
+  .stores-table-container,
+  .products-table-container {
+    overflow-x: auto;
+  }
+
+  .stores-table,
+  .products-table {
+    min-width: 800px;
+  }
+
+  .store-actions,
+  .product-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .stores-header h1,
+  .products-header h1 {
+    font-size: 28px;
+  }
+}
+

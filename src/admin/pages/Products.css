@@ -1,0 +1,68 @@
+.admin-layout .products-page {
+  width: 100%;
+}
+
+.admin-layout .add-product-button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #FFA000 0%, #FFC107 100%);
+  color: var(--brand-blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-layout .add-product-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.admin-layout .add-product-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.admin-layout .add-product-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+  background: linear-gradient(135deg, #FFC107 0%, #FFA000 100%);
+}
+
+.admin-layout .add-product-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+.admin-layout .add-product-button svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.admin-layout .add-product-button:hover svg {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  .admin-layout .add-product-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

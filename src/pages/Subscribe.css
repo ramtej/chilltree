@@ -1,0 +1,308 @@
+/* Subscribe — same format as Cart */
+.subscribe-page {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --brand-gold: #c9a227;
+  --brand-gold-light: #e5c76b;
+  --brand-gold-dark: #a68521;
+  --brand-silver: #c0c0c0;
+  --brand-silver-light: #e8e8e8;
+  --brand-silver-bg: #f7f8fa;
+  --brand-silver-muted: #9ca3af;
+  --brand-green: #1b7f37;
+  --brand-green-light: #2e9d4a;
+  --brand-green-muted: rgba(27, 127, 55, 0.12);
+  --brand-blue: #0f3460;
+  --brand-blue-mid: #1a4d7a;
+  --brand-blue-light: #2563eb;
+  --brand-blue-muted: rgba(15, 52, 96, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-on-dark: #f1f5f9;
+  --text-on-dark-muted: #94a3b8;
+  --surface: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(15, 52, 96, 0.06);
+  --shadow-md: 0 4px 20px rgba(15, 52, 96, 0.08);
+  --shadow-lg: 0 12px 40px rgba(15, 52, 96, 0.12);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: 
+    radial-gradient(ellipse 100% 60% at 20% 20%, rgba(15, 52, 96, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 80% 80%, rgba(201, 162, 39, 0.03) 0%, transparent 50%),
+    linear-gradient(180deg, var(--brand-silver-bg) 0%, #ffffff 100%);
+  animation: subscribe-bg-shift 12s ease-in-out infinite;
+}
+
+@keyframes subscribe-bg-shift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+.subscribe-hero {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.subscribe-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.03em;
+  color: var(--brand-blue);
+  line-height: 1.2;
+  background: 
+    linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-mid) 50%, var(--brand-green) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: subscribe-title-shimmer 8s ease-in-out infinite;
+}
+
+@keyframes subscribe-title-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.subscribe-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: subscribe-subtitle-fade 8s ease-in-out infinite;
+}
+
+@keyframes subscribe-subtitle-fade {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+.subscribe-cards {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.subscribe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.subscribe-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--brand-silver-light);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-green);
+}
+
+.subscribe-card--popular {
+  padding: 2.5rem 2rem;
+  border: 2px solid var(--brand-green);
+  box-shadow: 0 20px 60px rgba(15, 52, 96, 0.15);
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.subscribe-card--popular:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.subscribe-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(27, 127, 55, 0.35);
+  z-index: 2;
+}
+
+.subscribe-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.subscribe-card-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: var(--brand-blue);
+  letter-spacing: -0.01em;
+}
+
+.subscribe-card-duration {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.subscribe-card-price-wrap {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(15, 52, 96, 0.1);
+}
+
+.subscribe-card-price {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--brand-green);
+  line-height: 1;
+}
+
+.subscribe-card-original {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.subscribe-card-original-price {
+  font-size: 1rem;
+  color: var(--brand-silver-muted);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.subscribe-card-savings {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+}
+
+.subscribe-card-benefits {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.subscribe-card-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.subscribe-card-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.subscribe-card-benefits li span:first-child {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.125rem;
+}
+
+.subscribe-card-cta {
+  width: 100%;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-mid) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 16px rgba(15, 52, 96, 0.25);
+  letter-spacing: 0.01em;
+  margin-top: auto;
+  font-family: inherit;
+}
+
+.subscribe-card-cta:hover {
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(27, 127, 55, 0.35);
+}
+
+.subscribe-card--popular .subscribe-card-cta {
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  box-shadow: 0 8px 24px rgba(27, 127, 55, 0.35);
+}
+
+.subscribe-trust {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  text-align: center;
+}
+
+.subscribe-trust-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.subscribe-trust-item span:first-child {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}

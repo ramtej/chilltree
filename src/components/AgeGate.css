@@ -1,0 +1,96 @@
+/* Backdrop overlay - darkens and blurs the background */
+.agegate-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+}
+
+/* Centered popup box */
+.agegate-popup {
+  background: linear-gradient(135deg, rgba(10, 37, 64, 0.98) 0%, rgba(13, 58, 92, 0.98) 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.2);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.agegate-logo {
+  margin-bottom: 2rem;
+}
+
+.agegate-heading {
+  color: #fff;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.agegate-subtext {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 2.5rem 0;
+  text-align: center;
+}
+
+.agegate-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.agegate-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.agegate-button-yes {
+  background: linear-gradient(135deg, #d4af37 0%, #e0c050 100%);
+  color: #0a2540;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.agegate-button-yes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #e0c050 0%, #e8ce6a 100%);
+}
+
+.agegate-button-yes:active {
+  transform: translateY(0);
+}
+
+.agegate-button-no {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.agegate-button-no:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.agegate-button-no:active {
+  transform: translateY(1px);
+}
