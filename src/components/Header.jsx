@@ -47,7 +47,7 @@ export default function Header() {
           src="/chilltree-logo.png"
           alt="Chill Tree"
           style={{
-            height: "90px",
+            height: "100px",
             width: "auto",
             objectFit: "contain",
           }}

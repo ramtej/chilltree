@@ -17,24 +17,77 @@ export default function Home() {
 
   return (
     <>
+      {/* Hero Section - Premium Energy. Naturally. */}
       <section
+        className="hero-section"
         style={{
-          position: "relative",
+          minHeight: "100vh",
+          width: "100%",
+          background: "var(--gradient-hero)",
           display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: "3rem",
-          padding: "6rem 2rem",
-          paddingTop: "7rem",
-          minHeight: "700px",
-          width: "100%",
-          background: "linear-gradient(135deg, #0a2540 0%, #0d3a5c 50%, #1e4a73 100%)",
-          color: "#ffffff",
+          position: "relative",
           overflow: "hidden",
         }}
       >
+        {/* Premium Grain Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "var(--grain-overlay)",
+            pointerEvents: "none",
+            opacity: 0.8,
+          }}
+        />
+        
+        {/* Floating Premium Orbs */}
+        <div
+          className="float"
+          style={{
+            position: "absolute",
+            top: "15%",
+            left: "8%",
+            width: "300px",
+            height: "300px",
+            background: "radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%)",
+            borderRadius: "50%",
+            pointerEvents: "none",
+            filter: "blur(1px)",
+          }}
+        />
+        <div
+          className="float"
+          style={{
+            position: "absolute",
+            bottom: "15%",
+            right: "8%",
+            width: "250px",
+            height: "250px",
+            background: "radial-gradient(circle, rgba(15, 107, 79, 0.12) 0%, transparent 70%)",
+            borderRadius: "50%",
+            pointerEvents: "none",
+            animationDelay: "2s",
+            filter: "blur(1px)",
+          }}
+        />
+        <div
+          className="float"
+          style={{
+            position: "absolute",
+            top: "60%",
+            left: "20%",
+            width: "180px",
+            height: "180px",
+            background: "radial-gradient(circle, rgba(11, 44, 93, 0.08) 0%, transparent 70%)",
+            borderRadius: "50%",
+            pointerEvents: "none",
+            animationDelay: "1s",
+          }}
+        />
+        
         <div
           style={{
             position: "relative",
@@ -42,696 +95,1124 @@ export default function Home() {
             flexDirection: "row",
             flexWrap: "wrap",
             alignItems: "center",
-            gap: "3rem",
-            maxWidth: "1200px",
+            gap: "5rem",
+            maxWidth: "1400px",
             width: "100%",
+            padding: "3rem 2rem",
+            zIndex: 2,
           }}
         >
+          {/* Left Content - Premium */}
           <div
+            className="fade-in-up"
             style={{
               flex: "1",
-              minWidth: "300px",
+              minWidth: "400px",
               display: "flex",
               flexDirection: "column",
-              gap: "1.5rem",
-              overflow: "visible",
+              gap: "2.5rem",
             }}
           >
-            <h1
-              style={{
-                fontSize: "clamp(3.75rem, 9vw, 6rem)",
-                fontWeight: "900",
-                margin: 0,
-                marginBottom: "0.5rem",
-                lineHeight: "1.05",
-                letterSpacing: "-0.05em",
-                background: "linear-gradient(135deg, #FFFFFF 0%, #e1e8ed 20%, #cfd8dc 40%, #b0bec5 60%, #90a4ae 80%, #FFFFFF 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                overflow: "visible",
-                paddingBottom: "0.75rem",
-                position: "relative",
-                textTransform: "none",
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                textRendering: "optimizeLegibility",
-                WebkitFontSmoothing: "antialiased",
-                MozOsxFontSmoothing: "grayscale",
-                backgroundSize: "200% 200%",
-                animation: "gradientShift 8s ease infinite",
-              }}
-            >
-              Premium Energy. Naturally.
-            </h1>
-            <style>{`
-              @keyframes gradientShift {
-                0%, 100% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-              }
-            `}</style>
-            <p
-              style={{
-                fontSize: "1.25rem",
-                color: "#e1e8ed",
-                lineHeight: "1.8",
-                margin: 0,
-                maxWidth: "640px",
-                fontWeight: "400",
-                textShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
-              }}
-            >
-              Chilltree offers premium, naturally sourced energy to elevate focus,
-              recovery, and calm. Small-batch crafted, lab tested, and designed for
-              modern wellness rituals.
-            </p>
-            <Link
-              to="/products"
-              style={{
-                display: "inline-block",
-                padding: "1.25rem 3.5rem",
-                background: "linear-gradient(135deg, #d4af37 0%, #e0c050 50%, #e8ce6a 100%)",
-                color: "#0a2540",
-                textDecoration: "none",
-                borderRadius: "999px",
-                fontSize: "1.125rem",
-                fontWeight: "700",
-                width: "fit-content",
-                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                boxShadow: "0 8px 30px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2)",
-                letterSpacing: "0.02em",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "linear-gradient(135deg, #e0c050 0%, #e8ce6a 50%, #f0dc84 100%)";
-                e.target.style.transform = "translateY(-3px) scale(1.02)";
-                e.target.style.boxShadow = "0 12px 40px rgba(212, 175, 55, 0.5), 0 0 30px rgba(212, 175, 55, 0.3)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "linear-gradient(135deg, #d4af37 0%, #e0c050 50%, #e8ce6a 100%)";
-                e.target.style.transform = "translateY(0) scale(1)";
-                e.target.style.boxShadow = "0 8px 30px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2)";
-              }}
-            >
-              Shop Now
-            </Link>
-          </div>
-
-          <div
-            style={{
-              flex: "1",
-              minWidth: "300px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              src="/hero-product.png"
-              alt="Chilltree Premium Energy Products"
-              style={{
-                width: "100%",
-                maxWidth: "600px",
-                height: "auto",
-                borderRadius: "12px",
-                objectFit: "contain",
-              }}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section
-        style={{
-          padding: "6rem 2rem",
-          maxWidth: "1400px",
-          margin: "0 auto",
-          background: "#ffffff",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "clamp(2rem, 5vw, 3rem)",
-            fontWeight: "800",
-            textAlign: "center",
-            marginBottom: "3rem",
-            letterSpacing: "-0.02em",
-            background: "linear-gradient(135deg, #0a2540 0%, #0d3a5c 40%, #1e4a73 70%, #0a2540 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            filter: "drop-shadow(0 2px 8px rgba(10, 37, 64, 0.15))",
-          }}
-        >
-          Featured Products
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "2rem",
-          }}
-        >
-          {featuredProducts.map((product) => (
+            {/* Premium Trust Badges */}
             <div
-              key={product.id}
               style={{
-                backgroundColor: "#FFFFFF",
-                borderRadius: "14px",
-                overflow: "hidden",
-                boxShadow: "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(10, 37, 64, 0.08)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                 display: "flex",
-                flexDirection: "column",
-                border: "1px solid #cfd8dc",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow = "0 16px 45px rgba(10, 37, 64, 0.2), 0 4px 12px rgba(10, 37, 64, 0.12)";
-                e.currentTarget.style.borderColor = "#d4af37";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(10, 37, 64, 0.08)";
-                e.currentTarget.style.borderColor = "#cfd8dc";
+                gap: "1.5rem",
+                flexWrap: "wrap",
               }}
             >
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  aspectRatio: "1 / 1",
-                  backgroundColor: "#e5e7eb",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {productImageMap[product.id] ? (
-                  <img
-                    src={productImageMap[product.id]}
-                    alt={product.name}
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                ) : null}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "12px",
-                    left: "12px",
-                    background: "linear-gradient(135deg, #d4af37 0%, #e0c050 100%)",
-                    color: "#0a2540",
-                    padding: "0.5rem 0.875rem",
-                    borderRadius: "8px",
-                    fontSize: "0.75rem",
-                    fontWeight: "800",
-                    zIndex: 1,
-                    boxShadow: "0 4px 12px rgba(212, 175, 55, 0.4)",
-                    letterSpacing: "0.05em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Sale
-                </div>
+              <div className="trust-badge">
+                <span>✓</span>
+                <span>Lab Verified</span>
               </div>
-
-              <div
+              <div className="trust-badge">
+                <span>⭐</span>
+                <span>Premium Quality</span>
+              </div>
+              <div className="trust-badge">
+                <span>🏆</span>
+                <span>Award Winning</span>
+              </div>
+            </div>
+            
+            {/* Premium Headline */}
+            <div>
+              <h1
                 style={{
-                  padding: "1.5rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                  flex: 1,
+                  fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
+                  fontWeight: 700,
+                  margin: 0,
+                  lineHeight: 1.2,
+                  letterSpacing: "-0.03em",
+                  fontFamily: "var(--font-heading)",
+                  textShadow: "0 8px 32px rgba(11, 44, 93, 0.4), 0 4px 16px rgba(11, 44, 93, 0.3)",
+                  filter: "drop-shadow(0 8px 24px rgba(245, 215, 110, 0.3))",
+                  display: "block",
+                  width: "100%",
+                  overflow: "visible",
+                  paddingBottom: "0.5rem",
                 }}
               >
-                <h3
+                <span
                   style={{
-                    margin: 0,
-                    fontSize: "1.125rem",
-                    fontWeight: "700",
-                    background: "linear-gradient(135deg, #0a2540 0%, #1e4a73 100%)",
+                    background: "linear-gradient(135deg, #F5D76E 0%, #C9A227 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
+                    textShadow: "0 0 40px rgba(245, 215, 110, 0.2)",
                   }}
                 >
-                  {product.name}
-                </h3>
-
-                <div
+                  Premium
+                </span>{" "}
+                <span
                   style={{
-                    fontSize: "1.125rem",
-                    fontWeight: "700",
-                    color: "#2e7d32",
-                  }}
-                >
-                  From ${product.price.toFixed(2)}
-                </div>
-
-                <button
-                  onClick={() => handleAddToCart(product.id)}
-                  style={{
-                    padding: "0.875rem 1.5rem",
-                    background: "linear-gradient(135deg, #1e4a73 0%, #2d5a8a 100%)",
                     color: "#FFFFFF",
-                    border: "none",
-                    borderRadius: "10px",
-                    fontSize: "1rem",
-                    fontWeight: "700",
-                    cursor: "pointer",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    marginTop: "auto",
-                    boxShadow: "0 4px 15px rgba(10, 37, 64, 0.3)",
-                    letterSpacing: "0.01em",
+                    textShadow: "0 8px 32px rgba(11, 44, 93, 0.6), 0 0 60px rgba(245, 215, 110, 0.1)",
+                  }}
+                >
+                  Energy.
+                </span>{" "}
+                <span
+                  style={{
+                    color: "#E6E6E6",
+                    textShadow: "0 8px 32px rgba(11, 44, 93, 0.4), 0 0 40px rgba(245, 215, 110, 0.1)",
+                  }}
+                >
+                  Naturally.
+                </span>
+              </h1>
+              <div
+                style={{
+                  width: "120px",
+                  height: "4px",
+                  background: "linear-gradient(135deg, #F5D76E 0%, #C9A227 100%)",
+                  marginTop: "1.5rem",
+                  borderRadius: "2px",
+                  boxShadow: "0 0 20px rgba(245, 215, 110, 0.4), 0 0 40px rgba(245, 215, 110, 0.2)",
+                }}
+              />
+            </div>
+            
+            {/* Premium Description */}
+            <div
+              className="glass-card"
+              style={{
+                background: "rgba(248, 250, 252, 0.9)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(201, 162, 39, 0.2)",
+                padding: "2rem",
+                borderRadius: "var(--radius-lg)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "1.375rem",
+                  color: "var(--text-secondary)",
+                  lineHeight: 1.7,
+                  margin: 0,
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 500,
+                }}
+              >
+                Experience the perfect fusion of nature and science. Chilltree delivers premium energy that elevates your mind, body, and performance to extraordinary levels.
+              </p>
+            </div>
+            
+            {/* Premium CTA */}
+            <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+              <button className="premium-btn" style={{ fontSize: "1.125rem", padding: "1.25rem 3rem" }}>
+                Shop Premium Collection
+              </button>
+              <div
+                className="trust-badge"
+                style={{
+                  background: "var(--gradient-green)",
+                  color: "white",
+                  border: "none",
+                }}
+              >
+                <span>💰</span>
+                <span>Save 20%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Premium Floating Product */}
+          <div
+            className="fade-in-up"
+            style={{
+              flex: "1",
+              minWidth: "400px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              animationDelay: "0.4s",
+            }}
+          >
+            {/* Premium Product Glow */}
+            <div
+              className="gold-glow"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "150%",
+                height: "150%",
+                background: "radial-gradient(circle, rgba(201, 162, 39, 0.2) 0%, transparent 60%)",
+                borderRadius: "50%",
+                pointerEvents: "none",
+                filter: "blur(2px)",
+              }}
+            />
+            
+            {/* Premium Product Container */}
+            <div
+              className="glass-card"
+              style={{
+                padding: "2rem",
+                background: "rgba(248, 250, 252, 0.8)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(201, 162, 39, 0.3)",
+                borderRadius: "var(--radius-xl)",
+                position: "relative",
+                zIndex: 2,
+              }}
+            >
+              <img
+                src="/result_0.png"
+                alt="Chilltree Premium Energy"
+                style={{
+                  width: "100%",
+                  maxWidth: "450px",
+                  height: "auto",
+                  filter: "drop-shadow(0 50px 100px rgba(0, 0, 0, 0.25))",
+                  transition: "transform var(--transition-smooth)",
+                  borderRadius: "var(--radius-lg)",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = "scale(1.08) translateY(-15px) rotate(2deg)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = "scale(1) translateY(0) rotate(0)";
+                }}
+              />
+              
+              {/* Premium Badge */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-1rem",
+                  right: "-1rem",
+                  background: "var(--gradient-gold)",
+                  color: "var(--text-primary)",
+                  padding: "0.75rem 1.5rem",
+                  borderRadius: "999px",
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  boxShadow: "var(--shadow-gold-glow)",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  transform: "rotate(12deg)",
+                }}
+              >
+                Premium
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <style>{`
+          @keyframes titleShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+          }
+        `}</style>
+      </section>
+
+      {/* Premium Collection */}
+      <section
+        className="premium-collection-section"
+        style={{
+          position: 'relative',
+        }}
+      >
+        {/* Floating Premium Orbs */}
+        <div 
+          className="premium-orb premium-orb-gold" 
+          style={{
+            top: '20%',
+            left: '10%',
+            animationDelay: '0s'
+          }} 
+        />
+        <div 
+          className="premium-orb premium-orb-green" 
+          style={{
+            bottom: '20%',
+            right: '15%',
+            animationDelay: '3s'
+          }} 
+        />
+        <div 
+          className="premium-orb premium-orb-gold" 
+          style={{
+            top: '50%',
+            left: '60%',
+            animationDelay: '6s'
+          }} 
+        />
+        
+        <div
+          className="premium-fade-in-up"
+          style={{
+            textAlign: 'center',
+            marginBottom: '5rem',
+            position: 'relative',
+            zIndex: 2,
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 2rem'
+          }}
+        >
+          <h2 className="premium-collection-title title-shimmer">
+            <span className="premium">Premium</span>{' '}
+            <span className="collection">Collection</span>
+          </h2>
+          <div
+            style={{
+              width: '120px',
+              height: '4px',
+              background: 'linear-gradient(90deg, #F5D76E, #C9A227)',
+              margin: '2rem auto',
+              borderRadius: '2px',
+              boxShadow: '0 0 20px rgba(245, 215, 110, 0.4), 0 0 40px rgba(245, 215, 110, 0.2)',
+            }}
+          />
+          <p
+            style={{
+              fontSize: '1.25rem',
+              color: '#FFFFFF',
+              maxWidth: '600px',
+              margin: '0 auto',
+              fontFamily: 'var(--font-body)',
+              lineHeight: 1.7,
+              fontWeight: 500,
+              textShadow: '0 4px 16px rgba(11, 44, 93, 0.3)'
+            }}
+          >
+            Discover our carefully curated selection of premium wellness products crafted for extraordinary results
+          </p>
+        </div>
+
+        {/* Product Grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+            gap: "3rem",
+            marginBottom: "4rem",
+            position: "relative",
+            zIndex: 2,
+            maxWidth: "1400px",
+            margin: "0 auto",
+            padding: "0 2rem"
+          }}
+        >
+          {featuredProducts.map((product, index) => (
+            <div
+              key={product.id}
+              className="premium-card premium-fade-in-up"
+              style={{
+                padding: "2.5rem",
+                animationDelay: `${index * 0.2}s`,
+              }}
+            >
+              {/* Product Image */}
+              <div
+                style={{
+                  position: "relative",
+                  marginBottom: "2rem",
+                  overflow: "hidden",
+                  borderRadius: "12px",
+                }}
+              >
+                <img
+                  src={productImageMap[product.id]}
+                  alt={product.name}
+                  style={{
+                    width: "100%",
+                    height: "250px",
+                    objectFit: "cover",
+                    transition: "transform 0.4s ease",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.background = "linear-gradient(135deg, #43a047 0%, #4caf50 100%)";
-                    e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow = "0 6px 20px rgba(10, 37, 64, 0.4)";
+                    e.target.style.transform = "scale(1.05)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.background = "linear-gradient(135deg, #1e4a73 0%, #2d5a8a 100%)";
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "0 4px 15px rgba(10, 37, 64, 0.3)";
+                    e.target.style.transform = "scale(1)";
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "1rem",
+                    right: "1rem",
+                    background: "linear-gradient(90deg, #F5D76E, #C9A227)",
+                    color: "#0B2C5D",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "999px",
+                    fontSize: "0.75rem",
+                    fontWeight: "600",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    boxShadow: "0 0 20px rgba(245, 215, 110, 0.4)",
                   }}
                 >
-                  Add to Cart
-                </button>
+                  Save 20%
+                </div>
               </div>
+              
+              {/* Product Name */}
+              <h3
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: 700,
+                  color: "#FFFFFF",
+                  margin: "0 0 1rem 0",
+                  fontFamily: "var(--font-heading)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                {product.name}
+              </h3>
+              
+              {/* Premium Badge */}
+              <div
+                className="trust-badge"
+                style={{
+                  background: "linear-gradient(90deg, #F5D76E, #C9A227)",
+                  color: "#0B2C5D",
+                  border: "none",
+                  padding: "0.5rem 1rem",
+                  fontSize: "0.75rem",
+                  marginLeft: "1rem",
+                  display: "inline-block",
+                }}
+              >
+                <span>⭐</span>
+                <span>Premium</span>
+              </div>
+              
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "rgba(255, 255, 255, 0.8)",
+                  lineHeight: 1.6,
+                  margin: "0 0 1.5rem 0",
+                  fontFamily: "var(--font-body)",
+                }}
+              >
+                {product.description}
+              </p>
+              
+              {/* Premium Price Section */}
+              <div
+                style={{
+                  marginBottom: "2rem",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "1.25rem",
+                    color: "#F5D76E",
+                    fontWeight: 700,
+                    fontFamily: "var(--font-heading)",
+                    textShadow: "0 0 20px rgba(245, 215, 110, 0.3)",
+                  }}
+                >
+                  ${product.price}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.875rem",
+                    color: "rgba(255, 255, 255, 0.6)",
+                    textDecoration: "line-through",
+                    marginTop: "0.5rem",
+                  }}
+                >
+                  Regular ${Math.round(product.price * 1.25)}
+                </div>
+              </div>
+              
+              {/* CTA */}
+              <button
+                className="premium-btn premium-pulse"
+                style={{
+                  width: "100%",
+                  fontSize: "1rem",
+                  padding: "1rem 2rem",
+                }}
+                onClick={() => handleAddToCart(product.id)}
+              >
+                Add to Collection
+              </button>
             </div>
           ))}
         </div>
+        
+        {/* Section CTA */}
+        <div
+          className="premium-fade-in-up"
+          style={{
+            textAlign: "center",
+            maxWidth: "600px",
+            margin: "0 auto",
+            padding: "0 2rem 4rem",
+          }}
+        >
+          <button
+            className="premium-btn"
+            style={{
+              fontSize: "1.25rem",
+              padding: "1.5rem 3rem",
+            }}
+          >
+            View Full Collection
+          </button>
+        </div>
+        
+        {/* Premium Section CTA */}
+        <div
+          className="premium-fade-in-up"
+          style={{
+            textAlign: "center",
+            maxWidth: "600px",
+            margin: "0 auto",
+            padding: "0 2rem 4rem",
+          }}
+        >
+          <button
+            className="premium-btn"
+            style={{
+              fontSize: "1.25rem",
+              padding: "1.5rem 3rem",
+            }}
+          >
+            View Full Collection
+          </button>
+        </div>
+      </section>
+      
+      {/* Subscribe & Save Section */}
+      <section
+        className="fade-in-up"
+        style={{
+          textAlign: "center",
+          animationDelay: "0.8s",
+        }}
+      >
+        <div
+          className="glass-card"
+          style={{
+            background: "rgba(248, 250, 252, 0.9)",
+            backdropFilter: "blur(20px)",
+            border: "1px solid rgba(201, 162, 39, 0.2)",
+            padding: "2rem",
+            borderRadius: "var(--radius-xl)",
+            maxWidth: "600px",
+            margin: "0 auto",
+          }}
+        >
+            <p
+              style={{
+                fontSize: "1.125rem",
+                color: "var(--text-secondary)",
+                margin: "0 0 1.5rem 0",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              Ready to experience premium wellness?
+            </p>
+            <button className="premium-btn" style={{ fontSize: "1.125rem", padding: "1.25rem 3rem" }}>
+              View All Products
+            </button>
+          </div>
       </section>
 
-      {/* Subscribe Banner */}
+      {/* Subscribe & Save Section */}
       <section
+        className="subscribe-section"
         style={{
           width: "100%",
-          background: "linear-gradient(135deg, #0a2540 0%, #0d3a5c 40%, #1e4a73 70%, #0d3a5c 100%)",
-          color: "#FFFFFF",
+          background: "var(--gradient-green)",
+          color: "white",
+          padding: "6rem 2rem",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Subscribe Ribbon */}
+        <div
+          style={{
+            position: "absolute",
+            top: "2rem",
+            right: "-2rem",
+            background: "var(--accent-gold)",
+            color: "var(--text-primary)",
+            padding: "0.5rem 3rem",
+            transform: "rotate(45deg)",
+            fontSize: "0.875rem",
+            fontWeight: 600,
+            fontFamily: "var(--font-body)",
+            boxShadow: "var(--shadow-gold)",
+            zIndex: 3,
+          }}
+        >
+          Subscribe & Save
+        </div>
+        
+        <div
+          className="fade-in-up"
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            textAlign: "center",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
+              fontWeight: 700,
+              margin: 0,
+              marginBottom: "1.5rem",
+              fontFamily: "var(--font-heading)",
+              color: "white",
+            }}
+          >
+            Subscribe & Save 20%
+          </h2>
+          <p
+            style={{
+              fontSize: "1.25rem",
+              color: "rgba(255, 255, 255, 0.9)",
+              maxWidth: "700px",
+              margin: "0 auto 3rem auto",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            Join our subscription program and enjoy premium savings, exclusive benefits, and never run out of your favorite wellness products.
+          </p>
+          
+          {/* Benefits */}
+          <div
+            className="glass-card"
+            style={{
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(16px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              padding: "2rem",
+              marginBottom: "3rem",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "2rem",
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  💰
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.125rem",
+                    fontWeight: 600,
+                    marginBottom: "0.5rem",
+                    fontFamily: "var(--font-heading)",
+                  }}
+                >
+                  Save 20%
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.875rem",
+                    opacity: 0.9,
+                    fontFamily: "var(--font-body)",
+                  }}
+                >
+                  Every order, every time
+                </div>
+              </div>
+              
+              <div>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  🚚
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.125rem",
+                    fontWeight: 600,
+                    marginBottom: "0.5rem",
+                    fontFamily: "var(--font-heading)",
+                  }}
+                >
+                  Free Shipping
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.875rem",
+                    opacity: 0.9,
+                    fontFamily: "var(--font-body)",
+                  }}
+                >
+                  On all subscription orders
+                </div>
+              </div>
+              
+              <div>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  ⏰
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.125rem",
+                    fontWeight: 600,
+                    marginBottom: "0.5rem",
+                    fontFamily: "var(--font-heading)",
+                  }}
+                >
+                  Flexible Timing
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.875rem",
+                    opacity: 0.9,
+                    fontFamily: "var(--font-body)",
+                  }}
+                >
+                  Pause or cancel anytime
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button className="premium-btn">
+            Start Saving Today
+          </button>
+        </div>
+      </section>
+
+      {/* Trust Section - Lab Tested. Transparent. */}
+      <section
+        className="trust-section"
+        style={{
           padding: "8rem 2rem",
+          width: "100%",
+          background: "var(--neutral-silver)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          gap: "2.5rem",
           position: "relative",
           overflow: "hidden",
         }}
       >
+        {/* Premium Background Elements */}
         <div
+          className="float"
           style={{
             position: "absolute",
-            inset: 0,
-            background: "radial-gradient(circle at center, rgba(10, 37, 64, 0.15) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <h2
-          style={{
-            margin: 0,
-            fontSize: "clamp(2.5rem, 6vw, 4rem)",
-            fontWeight: "900",
-            letterSpacing: "-0.02em",
-            lineHeight: "1.1",
-            background: "linear-gradient(135deg, #FFFFFF 0%, #fdf9e6 20%, #faf4cc 50%, #d4af37 80%, #FFFFFF 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            filter: "drop-shadow(0 4px 20px rgba(10, 37, 64, 0.4))",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          Subscribe & Save 20%
-        </h2>
-        <p
-          style={{
-            margin: 0,
-            fontSize: "clamp(1.125rem, 2.5vw, 1.5rem)",
-            color: "#e1e8ed",
-            maxWidth: "650px",
-            lineHeight: "1.8",
-            fontWeight: "400",
-            textShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          Get your energy delivered every month at a discounted price.
-        </p>
-        <Link
-          to="/subscribe"
-          style={{
-            display: "inline-block",
-            padding: "1.5rem 4rem",
-            background: "linear-gradient(135deg, #FFFFFF 0%, #fdf9e6 30%, #faf4cc 60%, #d4af37 100%)",
-            color: "#0a2540",
-            textDecoration: "none",
-            borderRadius: "999px",
-            fontSize: "1.25rem",
-            fontWeight: "800",
-            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-            boxShadow: "0 10px 40px rgba(255, 255, 255, 0.3), 0 0 30px rgba(212, 175, 55, 0.4)",
-            letterSpacing: "0.02em",
-            position: "relative",
-            zIndex: 1,
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = "linear-gradient(135deg, #FFFFFF 0%, #fdf9e6 25%, #faf4cc 50%, #e8ce6a 75%, #d4af37 100%)";
-            e.target.style.transform = "translateY(-4px) scale(1.03)";
-            e.target.style.boxShadow = "0 15px 50px rgba(255, 255, 255, 0.4), 0 0 40px rgba(10, 37, 64, 0.5)";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = "linear-gradient(135deg, #FFFFFF 0%, #fdf9e6 30%, #faf4cc 60%, #d4af37 100%)";
-            e.target.style.transform = "translateY(0) scale(1)";
-            e.target.style.boxShadow = "0 10px 40px rgba(255, 255, 255, 0.3), 0 0 30px rgba(212, 175, 55, 0.4)";
-          }}
-        >
-          Subscribe Now
-        </Link>
-      </section>
-
-      {/* Trust Section */}
-      <section
-        style={{
-          padding: "8rem 2rem",
-          width: "100%",
-          background: "#ffffff",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          gap: "4rem",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "10%",
-            right: "-10%",
-            width: "400px",
-            height: "400px",
-            background: "radial-gradient(circle, rgba(10, 37, 64, 0.08) 0%, transparent 70%)",
+            top: "15%",
+            left: "10%",
+            width: "200px",
+            height: "200px",
+            background: "radial-gradient(circle, rgba(201, 162, 39, 0.08) 0%, transparent 70%)",
             borderRadius: "50%",
             pointerEvents: "none",
           }}
         />
         <div
+          className="float"
           style={{
             position: "absolute",
-            bottom: "10%",
-            left: "-10%",
-            width: "400px",
-            height: "400px",
-            background: "radial-gradient(circle, rgba(10, 37, 64, 0.06) 0%, transparent 70%)",
+            bottom: "15%",
+            right: "10%",
+            width: "180px",
+            height: "180px",
+            background: "radial-gradient(circle, rgba(11, 44, 93, 0.06) 0%, transparent 70%)",
             borderRadius: "50%",
             pointerEvents: "none",
+            animationDelay: "2s",
           }}
         />
+        
         <div
+          className="fade-in-up"
           style={{
             maxWidth: "1200px",
             width: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "3rem",
+            gap: "4rem",
             position: "relative",
-            zIndex: 1,
+            zIndex: 2,
           }}
         >
+          {/* Premium Section Header */}
           <div
+            className="glass-card"
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "1.5rem",
+              background: "rgba(248, 250, 252, 0.9)",
+              backdropFilter: "blur(20px)",
+              border: "1px solid rgba(201, 162, 39, 0.2)",
+              padding: "3rem",
+              borderRadius: "var(--radius-xl)",
               maxWidth: "800px",
             }}
           >
             <h2
               style={{
-                margin: 0,
-                fontSize: "clamp(2rem, 5vw, 3rem)",
-                fontWeight: "800",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                fontWeight: 700,
                 letterSpacing: "-0.02em",
-                lineHeight: "1.2",
-                background: "linear-gradient(135deg, #0a2540 0%, #0d3a5c 30%, #1e4a73 60%, #0a2540 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                filter: "drop-shadow(0 2px 10px rgba(10, 37, 64, 0.2))",
+                lineHeight: 1.2,
+                fontFamily: "var(--font-heading)",
+                color: "var(--text-primary)",
+                margin: "0 0 1.5rem 0",
               }}
             >
               Lab Tested. Transparent.
             </h2>
+            <div
+              style={{
+                width: "80px",
+                height: "3px",
+                background: "var(--gradient-gold)",
+                margin: "0 auto 2rem auto",
+                borderRadius: "2px",
+                boxShadow: "var(--shadow-gold)",
+              }}
+            />
             <p
               style={{
+                fontSize: "1.25rem",
+                color: "var(--text-secondary)",
+                lineHeight: 1.7,
+                fontFamily: "var(--font-body)",
+                fontWeight: 500,
                 margin: 0,
-                fontSize: "1.125rem",
-                color: "#475569",
-                lineHeight: "1.75",
-                maxWidth: "700px",
-                fontWeight: "400",
               }}
             >
-              Every Chilltree product undergoes rigorous third-party lab testing to
-              ensure purity, potency, and safety. We believe in complete transparency
-              and make all lab reports available to our customers.
+              Every Chilltree product undergoes rigorous third-party lab testing to ensure purity, potency, and safety. We believe in complete transparency.
             </p>
           </div>
 
+          {/* Premium Trust Cards */}
           <div
             style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "2rem",
-              justifyContent: "center",
-              alignItems: "stretch",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "2.5rem",
               width: "100%",
-              maxWidth: "900px",
+              maxWidth: "1000px",
             }}
           >
+            {/* Trust Card 1 */}
             <div
+              className="glass-card fade-in-up"
               style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "1.25rem",
-                padding: "2.5rem 2rem",
-                backgroundColor: "#ffffff",
-                borderRadius: "14px",
-                minWidth: "180px",
-                flex: "1 1 200px",
-                maxWidth: "240px",
-                boxShadow: "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(11, 28, 45, 0.08)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                cursor: "default",
-                border: "1px solid rgba(10, 37, 64, 0.1)",
+                padding: "2.5rem",
+                animationDelay: "0.2s",
+                background: "rgba(248, 250, 252, 0.95)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(230, 230, 230, 0.5)",
+                borderRadius: "var(--radius-xl)",
+                transition: "all var(--transition-smooth)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 16px 45px rgba(10, 37, 64, 0.2), 0 4px 12px rgba(11, 28, 45, 0.12)";
-                e.currentTarget.style.borderColor = "rgba(10, 37, 64, 0.2)";
+                e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+                e.currentTarget.style.boxShadow = "0 20px 60px rgba(201, 162, 39, 0.15), 0 8px 24px rgba(11, 44, 93, 0.1)";
+                e.currentTarget.style.borderColor = "var(--accent-gold)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(11, 28, 45, 0.08)";
-                e.currentTarget.style.borderColor = "rgba(10, 37, 64, 0.1)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                e.currentTarget.style.borderColor = "rgba(230, 230, 230, 0.5)";
               }}
             >
               <div
                 style={{
-                  width: "72px",
-                  height: "72px",
-                  background: "linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #4caf50 100%)",
+                  width: "80px",
+                  height: "80px",
+                  background: "var(--gradient-gold)",
                   borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "1.75rem",
-                  color: "#ffffff",
-                  fontWeight: "bold",
-                  boxShadow: "0 6px 20px rgba(10, 37, 64, 0.4)",
+                  fontSize: "2rem",
+                  color: "var(--text-primary)",
+                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  boxShadow: "var(--shadow-gold-glow)",
+                  margin: "0 auto 2rem auto",
+                  position: "relative",
                 }}
               >
-                ✓
+                <span style={{ position: "relative", zIndex: 2 }}>✓</span>
+                {/* Icon Glow */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: "50%",
+                    background: "inherit",
+                    filter: "blur(8px)",
+                    opacity: 0.6,
+                  }}
+                />
               </div>
               <div
                 style={{
-                  fontSize: "1rem",
-                  fontWeight: "700",
-                  background: "linear-gradient(135deg, #0a2540 0%, #1e4a73 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
+                  fontSize: "1.25rem",
+                  fontWeight: 600,
+                  fontFamily: "var(--font-heading)",
+                  color: "var(--text-primary)",
+                  marginBottom: "1rem",
                   letterSpacing: "-0.01em",
                 }}
               >
                 Third-Party Tested
               </div>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "var(--text-secondary)",
+                  fontFamily: "var(--font-body)",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                Independent lab verification ensures every batch meets our premium standards
+              </p>
             </div>
 
+            {/* Trust Card 2 */}
             <div
+              className="glass-card fade-in-up"
               style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "1.25rem",
-                padding: "2.5rem 2rem",
-                backgroundColor: "#ffffff",
-                borderRadius: "14px",
-                minWidth: "180px",
-                flex: "1 1 200px",
-                maxWidth: "240px",
-                boxShadow: "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(11, 28, 45, 0.08)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                cursor: "default",
-                border: "1px solid rgba(10, 37, 64, 0.1)",
+                padding: "2.5rem",
+                animationDelay: "0.4s",
+                background: "rgba(248, 250, 252, 0.95)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(230, 230, 230, 0.5)",
+                borderRadius: "var(--radius-xl)",
+                transition: "all var(--transition-smooth)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 16px 45px rgba(10, 37, 64, 0.2), 0 4px 12px rgba(11, 28, 45, 0.12)";
-                e.currentTarget.style.borderColor = "rgba(10, 37, 64, 0.2)";
+                e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+                e.currentTarget.style.boxShadow = "0 20px 60px rgba(201, 162, 39, 0.15), 0 8px 24px rgba(11, 44, 93, 0.1)";
+                e.currentTarget.style.borderColor = "var(--accent-gold)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(11, 28, 45, 0.08)";
-                e.currentTarget.style.borderColor = "rgba(10, 37, 64, 0.1)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                e.currentTarget.style.borderColor = "rgba(230, 230, 230, 0.5)";
               }}
             >
               <div
                 style={{
-                  width: "72px",
-                  height: "72px",
-                  background: "linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #4caf50 100%)",
+                  width: "80px",
+                  height: "80px",
+                  background: "var(--gradient-gold)",
                   borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "1.75rem",
-                  color: "#ffffff",
-                  fontWeight: "bold",
-                  boxShadow: "0 6px 20px rgba(10, 37, 64, 0.4)",
+                  fontSize: "2rem",
+                  color: "var(--text-primary)",
+                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  boxShadow: "var(--shadow-gold-glow)",
+                  margin: "0 auto 2rem auto",
+                  position: "relative",
                 }}
               >
-                📋
+                <span style={{ position: "relative", zIndex: 2 }}>📋</span>
+                {/* Icon Glow */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: "50%",
+                    background: "inherit",
+                    filter: "blur(8px)",
+                    opacity: 0.6,
+                  }}
+                />
               </div>
               <div
                 style={{
-                  fontSize: "1rem",
-                  fontWeight: "700",
-                  background: "linear-gradient(135deg, #0a2540 0%, #1e4a73 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
+                  fontSize: "1.25rem",
+                  fontWeight: 600,
+                  fontFamily: "var(--font-heading)",
+                  color: "var(--text-primary)",
+                  marginBottom: "1rem",
                   letterSpacing: "-0.01em",
                 }}
               >
                 Full Reports
               </div>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "var(--text-secondary)",
+                  fontFamily: "var(--font-body)",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                Complete transparency with detailed lab reports available for every product
+              </p>
             </div>
 
+            {/* Trust Card 3 */}
             <div
+              className="glass-card fade-in-up"
               style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "1.25rem",
-                padding: "2.5rem 2rem",
-                backgroundColor: "#ffffff",
-                borderRadius: "14px",
-                minWidth: "180px",
-                flex: "1 1 200px",
-                maxWidth: "240px",
-                boxShadow: "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(11, 28, 45, 0.08)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                cursor: "default",
-                border: "1px solid rgba(10, 37, 64, 0.1)",
+                padding: "2.5rem",
+                animationDelay: "0.6s",
+                background: "rgba(248, 250, 252, 0.95)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(230, 230, 230, 0.5)",
+                borderRadius: "var(--radius-xl)",
+                transition: "all var(--transition-smooth)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 16px 45px rgba(10, 37, 64, 0.2), 0 4px 12px rgba(11, 28, 45, 0.12)";
-                e.currentTarget.style.borderColor = "rgba(10, 37, 64, 0.2)";
+                e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+                e.currentTarget.style.boxShadow = "0 20px 60px rgba(201, 162, 39, 0.15), 0 8px 24px rgba(11, 44, 93, 0.1)";
+                e.currentTarget.style.borderColor = "var(--accent-gold)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 10px 30px rgba(10, 37, 64, 0.12), 0 2px 8px rgba(11, 28, 45, 0.08)";
-                e.currentTarget.style.borderColor = "rgba(10, 37, 64, 0.1)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                e.currentTarget.style.borderColor = "rgba(230, 230, 230, 0.5)";
               }}
             >
               <div
                 style={{
-                  width: "72px",
-                  height: "72px",
-                  background: "linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #4caf50 100%)",
+                  width: "80px",
+                  height: "80px",
+                  background: "var(--gradient-gold)",
                   borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "1.75rem",
-                  color: "#ffffff",
-                  fontWeight: "bold",
-                  boxShadow: "0 6px 20px rgba(10, 37, 64, 0.4)",
+                  fontSize: "2rem",
+                  color: "var(--text-primary)",
+                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  boxShadow: "var(--shadow-gold-glow)",
+                  margin: "0 auto 2rem auto",
+                  position: "relative",
                 }}
               >
-                🔬
+                <span style={{ position: "relative", zIndex: 2 }}>🔬</span>
+                {/* Icon Glow */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: "50%",
+                    background: "inherit",
+                    filter: "blur(8px)",
+                    opacity: 0.6,
+                  }}
+                />
               </div>
               <div
                 style={{
-                  fontSize: "1rem",
-                  fontWeight: "700",
-                  background: "linear-gradient(135deg, #0a2540 0%, #1e4a73 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
+                  fontSize: "1.25rem",
+                  fontWeight: 600,
+                  fontFamily: "var(--font-heading)",
+                  color: "var(--text-primary)",
+                  marginBottom: "1rem",
                   letterSpacing: "-0.01em",
                 }}
               >
                 Certified Labs
               </div>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "var(--text-secondary)",
+                  fontFamily: "var(--font-body)",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                Partnered with internationally accredited laboratories for testing excellence
+              </p>
             </div>
           </div>
 
-          <Link
-            to="/labs"
+          {/* Premium CTA Section */}
+          <div
+            className="fade-in-up"
             style={{
-              display: "inline-block",
-              padding: "1.3rem 3.5rem",
-              background: "linear-gradient(135deg, #0a2540 0%, #0d3a5c 40%, #1e4a73 70%, #0d3a5c 100%)",
-              color: "#FFFFFF",
-              textDecoration: "none",
-              borderRadius: "999px",
-              fontSize: "1.0625rem",
-              fontWeight: "700",
-              transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-              marginTop: "0.5rem",
-              boxShadow: "0 8px 30px rgba(10, 37, 64, 0.3), 0 4px 15px rgba(10, 37, 64, 0.2)",
-              letterSpacing: "0.02em",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = "linear-gradient(135deg, #0d3a5c 0%, #1e4a73 40%, #2d5a8a 70%, #1e4a73 100%)";
-              e.target.style.transform = "translateY(-3px) scale(1.02)";
-              e.target.style.boxShadow = "0 12px 40px rgba(10, 37, 64, 0.4), 0 6px 20px rgba(10, 37, 64, 0.25)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = "linear-gradient(135deg, #0a2540 0%, #0d3a5c 40%, #1e4a73 70%, #0d3a5c 100%)";
-              e.target.style.transform = "translateY(0) scale(1)";
-              e.target.style.boxShadow = "0 8px 30px rgba(10, 37, 64, 0.3), 0 4px 15px rgba(10, 37, 64, 0.2)";
+              animationDelay: "0.8s",
             }}
           >
-            View Lab Reports
-          </Link>
+            <div
+              className="glass-card"
+              style={{
+                background: "rgba(248, 250, 252, 0.9)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(201, 162, 39, 0.2)",
+                padding: "2.5rem",
+                borderRadius: "var(--radius-xl)",
+                maxWidth: "600px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "1.125rem",
+                  color: "var(--text-secondary)",
+                  margin: "0 0 2rem 0",
+                  fontFamily: "var(--font-body)",
+                  lineHeight: 1.6,
+                }}
+              >
+                Review our comprehensive lab reports and see the quality difference for yourself
+              </p>
+              <button className="premium-btn" style={{ fontSize: "1.125rem", padding: "1.25rem 3rem" }}>
+                View Lab Reports
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </>
