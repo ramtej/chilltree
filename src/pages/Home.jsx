@@ -23,7 +23,7 @@ export default function Home() {
         style={{
           minHeight: "100vh",
           width: "100%",
-          background: "var(--gradient-hero)",
+          background: "radial-gradient(circle at 15% 30%, rgba(245,215,110,0.24), transparent 42%), radial-gradient(circle at 75% 60%, rgba(255,255,255,0.12), transparent 45%), linear-gradient(180deg, #081E34 0%, #0B2C5D 60%, #1A4D7A 100%)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -52,7 +52,7 @@ export default function Home() {
             left: "8%",
             width: "300px",
             height: "300px",
-            background: "radial-gradient(circle, rgba(201, 162, 39, 0.15) 0%, transparent 70%)",
+            background: "radial-gradient(circle at 30% 40%, rgba(245,215,110,0.12), transparent 45%), linear-gradient(180deg, #0B2C5D 0%, #06182A 100%)",
             borderRadius: "50%",
             pointerEvents: "none",
             filter: "blur(1px)",
@@ -159,14 +159,14 @@ export default function Home() {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
-                    textShadow: "0 0 40px rgba(245, 215, 110, 0.2)",
+                    textShadow: "0 0 12px rgba(245,215,110,0.6), 0 0 30px rgba(201,162,39,0.4)",
                   }}
                 >
                   Clean Energy
                 </span>{" "}
                 <span
                   style={{
-                    color: "#FFFFFF",
+                    color: "rgba(255,255,255,0.92)",
                     textShadow: "0 8px 32px rgba(11, 44, 93, 0.6), 0 0 60px rgba(245, 215, 110, 0.1)",
                   }}
                 >
@@ -174,7 +174,7 @@ export default function Home() {
                 </span>{" "}
                 <span
                   style={{
-                    color: "#E6E6E6",
+                    color: "var(--gold-light)",
                     textShadow: "0 8px 32px rgba(11, 44, 93, 0.4), 0 0 40px rgba(245, 215, 110, 0.1)",
                   }}
                 >
@@ -197,17 +197,18 @@ export default function Home() {
             <div
               className="glass-card"
               style={{
-                background: "rgba(255,255,255,0.08)",
-                backdropFilter: "blur(16px)",
-                border: "1px solid rgba(201, 162, 39, 0.2)",
+                background: "rgba(6,24,42,0.55)",
+                backdropFilter: "blur(14px)",
+                border: "1px solid rgba(201,162,39,0.14)",
                 padding: "2rem",
                 borderRadius: "var(--radius-lg)",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
               }}
             >
               <p
                 style={{
                   fontSize: "1.375rem",
-                  color: "var(--text-secondary)",
+                  color: "rgba(255,255,255,0.92)",
                   lineHeight: 1.7,
                   margin: 0,
                   fontFamily: "var(--font-body)",
@@ -311,12 +312,13 @@ export default function Home() {
               className="glass-card"
               style={{
                 padding: "2rem",
-                background: "rgba(248, 250, 252, 0.8)",
+                background: "linear-gradient(180deg, #F8FAFC, #E6E6E6)",
                 backdropFilter: "blur(20px)",
                 border: "1px solid rgba(201, 162, 39, 0.3)",
-                borderRadius: "var(--radius-xl)",
+                borderRadius: "22px",
                 position: "relative",
                 zIndex: 2,
+                boxShadow: "0 40px 100px rgba(0,0,0,0.35), inset 0 0 30px rgba(255,255,255,0.4)",
               }}
             >
               <img
@@ -454,6 +456,8 @@ export default function Home() {
         className="premium-collection-section"
         style={{
           position: 'relative',
+          background: "radial-gradient(circle at 50% -20%, rgba(245,215,110,0.12), transparent 45%), linear-gradient(180deg, #06182A 0%, #0B2C5D 100%)",
+          padding: "6rem 2rem",
         }}
       >
         {/* Floating Premium Orbs */}
@@ -573,6 +577,8 @@ export default function Home() {
               key={product.id}
               className="premium-card premium-fade-in-up"
               style={{
+                background: "linear-gradient(180deg, #1E3A5F, #132B45)",
+                boxShadow: "0 30px 80px rgba(0,0,0,0.55), inset 0 0 40px rgba(255,255,255,0.05)",
                 padding: "2.5rem",
                 animationDelay: `${index * 0.2}s`,
               }}
@@ -594,8 +600,9 @@ export default function Home() {
                     height: "250px",
                     objectFit: "cover",
                     transition: "transform 0.4s ease",
-                    border: "2px solid #000000",
-                    borderRadius: "12px",
+                    background: "linear-gradient(180deg, #FFFFFF, #F3F6FA)",
+                    borderRadius: "14px",
+                    boxShadow: "inset 0 0 25px rgba(0,0,0,0.08)",
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.transform = "scale(1.05)";
@@ -609,8 +616,8 @@ export default function Home() {
                     position: "absolute",
                     top: "1rem",
                     right: "1rem",
-                    background: "linear-gradient(90deg, #F5D76E, #C9A227)",
-                    color: "#0B2C5D",
+                    background: "linear-gradient(90deg, var(--gold-light), var(--gold-main))",
+                    color: "var(--primary-blue)",
                     padding: "0.5rem 1rem",
                     borderRadius: "999px",
                     fontSize: "0.75rem",
@@ -643,7 +650,7 @@ export default function Home() {
                 className="trust-badge"
                 style={{
                   background: "linear-gradient(90deg, #F5D76E, #C9A227)",
-                  color: "#0B2C5D",
+                  color: "var(--primary-blue)",
                   border: "none",
                   padding: "0.5rem 1rem",
                   fontSize: "0.75rem",
@@ -676,7 +683,7 @@ export default function Home() {
                 <div
                   style={{
                     fontSize: "1.25rem",
-                    background: "linear-gradient(90deg, #F5D76E, #C9A227)",
+                    background: "linear-gradient(90deg, var(--gold-light), var(--gold-main))",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -689,7 +696,7 @@ export default function Home() {
                 <div
                   style={{
                     fontSize: "0.875rem",
-                    color: "#8FA0B5",
+                    color: "var(--gold-main)",
                     textDecoration: "line-through",
                     marginTop: "0.5rem",
                   }}
@@ -725,69 +732,43 @@ export default function Home() {
           ))}
         </div>
         
-        {/* Section CTA */}
+        {/* View Full Collection Button */}
         <div
           className="premium-fade-in-up"
           style={{
             textAlign: "center",
             maxWidth: "600px",
-            margin: "0 auto",
-            padding: "0 2rem 4rem",
+            margin: "0 auto 2rem auto",
+            padding: "0 2rem",
+            animationDelay: "0.5s"
           }}
         >
-          <button
-            className="premium-btn"
-            style={{
-              fontSize: "1.25rem",
-              padding: "1.5rem 3rem",
-            }}
-          >
+          <button className="premium-btn" style={{ fontSize: "1.25rem", padding: "1.5rem 3rem" }}>
             View Full Collection
           </button>
         </div>
         
-        {/* Premium Section CTA */}
+        {/* Ready to Experience Section - Inside Premium Collection */}
         <div
           className="premium-fade-in-up"
           style={{
             textAlign: "center",
             maxWidth: "600px",
-            margin: "0 auto",
-            padding: "0 2rem 4rem",
+            margin: "0 auto 4rem auto",
+            padding: "0 2rem",
+            animationDelay: "0.6s"
           }}
         >
-          <button
-            className="premium-btn"
+          <div
+            className="glass-card"
             style={{
-              fontSize: "1.25rem",
-              padding: "1.5rem 3rem",
+              background: "rgba(248, 250, 252, 0.9)",
+              backdropFilter: "blur(20px)",
+              border: "1px solid rgba(201, 162, 39, 0.2)",
+              padding: "2rem",
+              borderRadius: "var(--radius-xl)",
             }}
           >
-            View Full Collection
-          </button>
-        </div>
-      </section>
-      
-      {/* Subscribe & Save Section */}
-      <section
-        className="fade-in-up"
-        style={{
-          textAlign: "center",
-          animationDelay: "0.8s",
-        }}
-      >
-        <div
-          className="glass-card"
-          style={{
-            background: "rgba(248, 250, 252, 0.9)",
-            backdropFilter: "blur(20px)",
-            border: "1px solid rgba(201, 162, 39, 0.2)",
-            padding: "2rem",
-            borderRadius: "var(--radius-xl)",
-            maxWidth: "600px",
-            margin: "0 auto",
-          }}
-        >
             <p
               style={{
                 fontSize: "1.125rem",
@@ -802,8 +783,10 @@ export default function Home() {
               View All Products
             </button>
           </div>
+        </div>
+        
       </section>
-
+      
       {/* Subscribe & Save Section */}
       <section
         className="subscribe-section"
@@ -1088,7 +1071,7 @@ export default function Home() {
             style={{
               background: "rgba(248, 250, 252, 0.9)",
               backdropFilter: "blur(20px)",
-              border: "1px solid rgba(201, 162, 39, 0.2)",
+              border: "1px solid rgba(201,162,39,0.14)",
               padding: "3rem",
               borderRadius: "var(--radius-xl)",
               maxWidth: "800px",
@@ -1223,7 +1206,7 @@ export default function Home() {
               <div
                 style={{
                   background: "rgba(201, 162, 39, 0.1)",
-                  border: "1px solid rgba(201, 162, 39, 0.2)",
+                  border: "1px solid rgba(201,162,39,0.14)",
                   padding: "0.75rem",
                   borderRadius: "8px",
                   fontSize: "0.875rem",
@@ -1435,7 +1418,7 @@ export default function Home() {
               style={{
                 background: "rgba(248, 250, 252, 0.9)",
                 backdropFilter: "blur(20px)",
-                border: "1px solid rgba(201, 162, 39, 0.2)",
+                border: "1px solid rgba(201,162,39,0.14)",
                 padding: "2.5rem",
                 borderRadius: "var(--radius-xl)",
                 maxWidth: "600px",

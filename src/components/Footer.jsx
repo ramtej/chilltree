@@ -4,8 +4,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        backgroundColor: "#071426",
-        backgroundImage: "linear-gradient(180deg, #071426 0%, #0B2C5D 100%)",
+        backgroundColor: "#06182A",
+        backgroundImage: "linear-gradient(180deg, #06182A 0%, #0B2C5D 100%)",
         borderTop: "3px solid #F5D76E",
         marginTop: "auto",
         color: "#FFFFFF",
@@ -245,7 +245,7 @@ export default function Footer() {
               <a
                 href="mailto:info@chilltree.com"
                 style={{
-                  color: "#F5D76E",
+                  color: "var(--gold-light)",
                   textDecoration: "none",
                   fontSize: "0.875rem",
                   transition: "color 0.2s ease",
@@ -323,30 +323,30 @@ export default function Footer() {
               { name: "X", image: "/twitter.png" },
               { name: "TikTok", image: "/tiktok.png" },
             ].map((social) => (
-              <a
+              <button
                 key={social.name}
-                href="#"
+                type="button"
                 style={{
                   width: "40px",
                   height: "40px",
                   borderRadius: "50%",
-                  border: "1px solid rgba(245, 215, 110, 0.2)",
+                  border: "1px solid rgba(140, 106, 21, 0.2)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   textDecoration: "none",
                   transition: "all 0.2s ease",
-                  backgroundColor: "rgba(245, 215, 110, 0.05)",
+                  backgroundColor: "rgba(140, 106, 21, 0.05)",
                   overflow: "hidden",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#F5D76E";
-                  e.currentTarget.style.borderColor = "#F5D76E";
+                  e.currentTarget.style.backgroundColor = "var(--gold-light)";
+                  e.currentTarget.style.borderColor = "var(--gold-light)";
                   e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "rgba(245, 215, 110, 0.05)";
-                  e.currentTarget.style.borderColor = "rgba(245, 215, 110, 0.2)";
+                  e.currentTarget.style.backgroundColor = "rgba(140, 106, 21, 0.05)";
+                  e.currentTarget.style.borderColor = "rgba(140, 106, 21, 0.2)";
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
                 aria-label={social.name}
@@ -360,7 +360,7 @@ export default function Footer() {
                     objectFit: "cover",
                   }}
                 />
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -369,7 +369,7 @@ export default function Footer() {
       {/* Bottom Row: Copyright */}
       <div
         style={{
-          borderTop: "1px solid rgba(245, 215, 110, 0.1)",
+          borderTop: "1px solid rgba(140, 106, 21, 0.1)",
           padding: "1rem 2rem",
           maxWidth: "1400px",
           margin: "0 auto",

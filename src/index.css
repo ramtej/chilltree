@@ -2,18 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Brand Color System (STRICT) */
+  /* Metallic Gold Spectrum */
+  --gold-shadow: #8C6A15;
+  --gold-main: #C9A227;
+  --gold-light: #F5D76E;
+  
+  /* Warm Navy System */
   --primary-blue: #0B2C5D;
-  --accent-gold: #C9A227;
+  --accent-gold: var(--gold-main);
   --support-green: #0F6B4F;
   --neutral-silver: #E6E6E6;
   --text-primary: #111111;
   --background-light: #F8FAFC;
   
   /* Extended Palette */
-  --gold-light: #D4B048;
-  --gold-dark: #B8941F;
+  --gold-dark: var(--gold-shadow);
   --blue-light: #1E4A7C;
+  --blue-deep: #06182A;
+  --blue-card: #132B45;
   --green-light: #2E8B5A;
   --silver-light: #F0F0F0;
   --silver-muted: #CCCCCC;

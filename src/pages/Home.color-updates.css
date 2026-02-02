@@ -1,44 +1,81 @@
 /* ============================================
-   Chilltree Clean Luxury Color System Updates
+   Chilltree Cinematic Luxury Showroom Updates
    ============================================ */
 
-/* Universal Button Styling */
+/* Universal Button Styling with Metallic Gold */
 .premium-btn {
-  background: linear-gradient(90deg, #F5D76E, #C9A227) !important;
-  color: #0B2C5D !important;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold-main)) !important;
+  color: var(--primary-blue) !important;
   border: none;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-smooth);
-  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.3);
+  box-shadow: 0 4px 16px rgba(140, 106, 21, 0.3);
 }
 
 .premium-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.4);
+  box-shadow: 0 8px 24px rgba(140, 106, 21, 0.4);
   filter: brightness(1.1);
 }
 
-/* Trust Badge Updates */
+/* Trust Badge Updates with Metallic Gold */
 .trust-badge {
-  background: linear-gradient(90deg, #F5D76E, #C9A227) !important;
-  color: #0B2C5D !important;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold-main)) !important;
+  color: var(--primary-blue) !important;
 }
 
 /* Text Hierarchy Updates */
-.text-primary { color: #0B2C5D !important; }
+.text-primary { color: var(--primary-blue) !important; }
 .text-secondary { color: #4A6A8C !important; }
 .text-muted { color: #8FA0B5 !important; }
-.text-on-dark { color: #FFFFFF !important; }
+.text-on-dark { color: rgba(255,255,255,0.92) !important; }
 .text-subtle { color: #C8D3E0 !important; }
 
-/* Section Backgrounds */
+/* Cinematic Hero Background */
 .hero-section {
-  background: radial-gradient(circle at 30% 40%, rgba(201,162,39,0.12), transparent 45%), 
-              linear-gradient(180deg, #0B2C5D 0%, #071426 100%) !important;
+  background: radial-gradient(circle at 25% 40%, rgba(245,215,110,0.22), transparent 40%), 
+              radial-gradient(circle at 75% 60%, rgba(255,255,255,0.12), transparent 45%),
+              linear-gradient(180deg, #06182A 0%, #0B2C5D 60%, #1A4D7A 100%) !important;
 }
 
+/* Hero Text Panel - Lifted from Background */
+.hero-section .glass-card {
+  background: rgba(6,24,42,0.55) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45) !important;
+}
+
+/* Hero Product Frame - Luxury Display Case */
+.hero-section .glass-card img {
+  background: linear-gradient(180deg, #F8FAFC, #E6E6E6) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.35), inset 0 0 30px rgba(255,255,255,0.4) !important;
+}
+
+/* Cinematic Premium Collection Background */
+.premium-collection-section {
+  background: radial-gradient(circle at 50% -20%, rgba(245,215,110,0.12), transparent 45%),
+              linear-gradient(180deg, #06182A 0%, #0B2C5D 100%) !important;
+}
+
+/* Premium Collection Cards - Luxury Lighting */
+.premium-card {
+  background: linear-gradient(180deg, #1E3A5F, #132B45) !important;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55), inset 0 0 40px rgba(255,255,255,0.05) !important;
+  border: none !important;
+}
+
+/* Product Image Stage - Luxury Display */
+.premium-card img {
+  background: linear-gradient(180deg, #FFFFFF, #F3F6FA) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 25px rgba(0,0,0,0.08) !important;
+  border: none !important;
+}
+
+/* Other Sections */
 .trust-strip {
   background: #FFFFFF !important;
   border-bottom: 1px solid rgba(11,44,93,0.08) !important;
@@ -48,27 +85,22 @@
   background: linear-gradient(180deg, #0F6B4F 0%, #0B2C5D 100%) !important;
 }
 
-.premium-collection-section {
-  background: linear-gradient(180deg, #EEF3F9 0%, #F8FAFC 100%) !important;
-}
-
 .trust-section {
   background: #F8FAFC !important;
 }
 
-/* Product Card Updates */
-.premium-card {
-  background: linear-gradient(180deg, #1B3554 0%, #0F223A 100%) !important;
-  border: 1px solid rgba(201, 162, 39, 0.2) !important;
-}
-
-/* Icon Updates */
+/* Icon Updates with Metallic Gold */
 .trust-icon-gold {
-  background: linear-gradient(135deg, #F5D76E 0%, #C9A227 100%) !important;
-  color: #0B2C5D !important;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 100%) !important;
+  color: var(--primary-blue) !important;
 }
 
 .trust-icon-blue {
   background: linear-gradient(135deg, #0B2C5D 0%, #1E4A7C 100%) !important;
-  color: #FFFFFF !important;
+  color: rgba(255,255,255,0.92) !important;
+}
+
+/* Glass Panel Border Refinements */
+.glass-card {
+  border: 1px solid rgba(201, 162, 39, 0.14) !important;
 }

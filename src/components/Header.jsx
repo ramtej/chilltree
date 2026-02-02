@@ -82,7 +82,7 @@ export default function Header() {
                 fontWeight: isActive ? "600" : "400",
                 padding: "0.55rem 1.1rem",
                 borderRadius: "999px",
-                background: isActive ? "linear-gradient(135deg, #071426 0%, #0B2C5D 50%, #1E4A7C 100%)" : "transparent",
+                background: isActive ? "linear-gradient(135deg, #06182A 0%, #0B2C5D 50%, #1E4A7C 100%)" : "transparent",
                 transition: "all 0.2s ease",
                 position: "relative",
               }}
@@ -124,24 +124,24 @@ export default function Header() {
         to="/signin"
         style={{
           textDecoration: "none",
-          background: "linear-gradient(135deg, #F5D76E 0%, #C9A227 50%, #F5D76E 100%)",
+          background: "linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-light) 100%)",
           color: "#0B2C5D",
           fontSize: "0.9rem",
           fontWeight: "700",
           padding: "0.55rem 1.5rem",
           borderRadius: "8px",
           transition: "all 0.2s ease",
-          boxShadow: "0 2px 8px rgba(245, 215, 110, 0.3)",
+          boxShadow: "0 2px 8px rgba(140, 106, 21, 0.3)",
         }}
         onMouseEnter={(e) => {
-          e.target.style.background = "linear-gradient(135deg, #F5D76E 0%, #F5D76E 50%, #F5D76E 100%)";
+          e.target.style.background = "linear-gradient(135deg, var(--gold-light) 0%, var(--gold-light) 50%, var(--gold-light) 100%)";
           e.target.style.transform = "translateY(-1px)";
-          e.target.style.boxShadow = "0 4px 12px rgba(245, 215, 110, 0.4)";
+          e.target.style.boxShadow = "0 4px 12px rgba(140, 106, 21, 0.4)";
         }}
         onMouseLeave={(e) => {
-          e.target.style.background = "linear-gradient(135deg, #F5D76E 0%, #C9A227 50%, #F5D76E 100%)";
+          e.target.style.background = "linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-light) 100%)";
           e.target.style.transform = "translateY(0)";
-          e.target.style.boxShadow = "0 2px 8px rgba(245, 215, 110, 0.3)";
+          e.target.style.boxShadow = "0 2px 8px rgba(140, 106, 21, 0.3)";
         }}
       >
         Sign in
