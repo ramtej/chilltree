@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { products } from "../data/products";
+import Marquee from "../components/Marquee";
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
@@ -94,7 +95,7 @@ export default function Home() {
                 letterSpacing: '-0.05em',
                 fontFamily: 'var(--font-display)',
                 textTransform: 'uppercase',
-                color: '#F8FAFC',
+                color: '#FFFFFF',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(232,236,243,0.2)',
               }}>
                 <span style={{
@@ -123,10 +124,15 @@ export default function Home() {
             </div>
             
             {/* Professional Description */}
-            <div className="fade-in-up glass-panel" style={{ 
+            <div className="fade-in-up" style={{ 
               animationDelay: '0.4s',
               maxWidth: '800px',
               margin: '0 auto 4rem auto',
+              background: 'rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              padding: '3rem',
+              borderRadius: 'var(--radius-3xl)',
             }}>
               <p style={{
                 fontSize: 'var(--scale-2xl)',
@@ -173,125 +179,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Strip - Hero Section Format */}
-      <section
-        className="trust-strip"
-        style={{
-          width: "100%",
-          position: "relative",
-          minHeight: '20vh',
-          overflow: "hidden"
-        }}
-      >
-        {/* Background Image */}
-        <img 
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop&auto=format" 
-          alt="Trust strip background"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.2,
-          }}
-        />
-        
-        {/* Cinematic Blue Overlay - Same as Hero */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'linear-gradient(to bottom, rgba(36,41,101,0.55), rgba(36,41,101,0.35), rgba(36,41,101,0.75))',
-          zIndex: 1,
-        }} />
-        
-        {/* Light Silver Mist - Luxury Effect */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'radial-gradient(circle at top, rgba(232,236,243,0.18), transparent 70%)',
-          zIndex: 2,
-        }} />
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "2rem",
-            padding: "2rem 2rem",
-            position: 'relative',
-            zIndex: 4,
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              fontSize: "0.875rem",
-              fontWeight: 600,
-              color: "#FFFFFF",
-              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            <span style={{ fontSize: "1.2rem" }}>✓</span>
-            <span>Lab Tested</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              fontSize: "0.875rem",
-              fontWeight: 600,
-              color: "#FFFFFF",
-              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            <span style={{ fontSize: "1.2rem" }}>🏆</span>
-            <span>Award Winning</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              fontSize: "0.875rem",
-              fontWeight: 600,
-              color: "#FFFFFF",
-              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            <span style={{ fontSize: "1.2rem" }}>🌿</span>
-            <span>Premium Botanics</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              fontSize: "0.875rem",
-              fontWeight: 600,
-              color: "#FFFFFF",
-              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            <span style={{ fontSize: "1.2rem" }}>📦</span>
-            <span>10,000+ Orders</span>
-          </div>
-        </div>
-      </section>
+      {/* Premium Marquee */}
+      <Marquee />
 
       {/* Premium Collection - Hero Section Format */}
       <section className="premium-section" style={{
@@ -431,7 +320,7 @@ export default function Home() {
                   top: '1.5rem',
                   right: '1.5rem',
                   background: 'var(--gradient-green)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   padding: '0.75rem 1.5rem',
                   borderRadius: 'var(--radius-full)',
                   fontSize: 'var(--scale-sm)',
@@ -542,7 +431,7 @@ export default function Home() {
                   top: '1.5rem',
                   right: '1.5rem',
                   background: 'var(--gradient-green)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   padding: '0.75rem 1.5rem',
                   borderRadius: 'var(--radius-full)',
                   fontSize: 'var(--scale-sm)',
@@ -571,7 +460,7 @@ export default function Home() {
                 
                 <p style={{
                   fontSize: 'var(--scale-lg)',
-                  color: 'var(--text-secondary)',
+                  color: 'rgba(255, 255, 255, 0.9)',
                   lineHeight: 1.7,
                   margin: '0 0 2rem 0',
                   fontFamily: 'var(--font-body)',
@@ -663,7 +552,7 @@ export default function Home() {
                   top: '1.5rem',
                   right: '1.5rem',
                   background: 'var(--gradient-green)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   padding: '0.75rem 1.5rem',
                   borderRadius: 'var(--radius-full)',
                   fontSize: 'var(--scale-sm)',
@@ -692,7 +581,7 @@ export default function Home() {
                 
                 <p style={{
                   fontSize: 'var(--scale-lg)',
-                  color: 'var(--text-secondary)',
+                  color: 'rgba(255, 255, 255, 0.9)',
                   lineHeight: 1.7,
                   margin: '0 0 2rem 0',
                   fontFamily: 'var(--font-body)',
@@ -832,7 +721,7 @@ export default function Home() {
                 fontFamily: 'var(--font-display)',
                 textTransform: 'uppercase',
                 letterSpacing: '-0.04em',
-                color: '#F8FAFC',
+                color: '#FFFFFF',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(232,236,243,0.2)',
               }}>
                 <span style={{
@@ -850,7 +739,7 @@ export default function Home() {
               
               <p style={{
                 fontSize: 'var(--scale-2xl)',
-                color: '#000000',
+                color: '#FFFFFF',
                 maxWidth: '800px',
                 margin: '0 auto 2.5rem auto',
                 fontFamily: 'var(--font-body)',
@@ -862,7 +751,7 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Benefits Grid - Side by Side */}
+            {/* Benefits Grid - Transparent Cards */}
             <div className="fade-in-up" style={{ 
               animationDelay: '1s',
               marginBottom: '4rem',
@@ -876,9 +765,10 @@ export default function Home() {
                 textAlign: 'center',
                 flex: '1',
                 maxWidth: '400px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
               }}>
                 <div style={{
                   fontSize: 'var(--scale-4xl)',
@@ -891,13 +781,13 @@ export default function Home() {
                   fontWeight: 600,
                   marginBottom: '0.75rem',
                   fontFamily: 'var(--font-display)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                 }}>
                   Save 25%
                 </div>
                 <div style={{
                   fontSize: 'var(--scale-base)',
-                  color: '#333333',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   fontFamily: 'var(--font-body)',
                 }}>
                   Every order, every time
@@ -908,9 +798,10 @@ export default function Home() {
                 textAlign: 'center',
                 flex: '1',
                 maxWidth: '400px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
               }}>
                 <div style={{
                   fontSize: 'var(--scale-4xl)',
@@ -923,13 +814,13 @@ export default function Home() {
                   fontWeight: 600,
                   marginBottom: '0.75rem',
                   fontFamily: 'var(--font-display)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                 }}>
                   Free Shipping
                 </div>
                 <div style={{
                   fontSize: 'var(--scale-base)',
-                  color: '#333333',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   fontFamily: 'var(--font-body)',
                 }}>
                   On all subscription orders
@@ -940,9 +831,10 @@ export default function Home() {
                 textAlign: 'center',
                 flex: '1',
                 maxWidth: '400px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
               }}>
                 <div style={{
                   fontSize: 'var(--scale-4xl)',
@@ -955,16 +847,16 @@ export default function Home() {
                   fontWeight: 600,
                   marginBottom: '0.75rem',
                   fontFamily: 'var(--font-display)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                 }}>
                   Flexible Timing
                 </div>
                 <div style={{
                   fontSize: 'var(--scale-base)',
-                  color: '#333333',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   fontFamily: 'var(--font-body)',
                 }}>
-                  Pause or cancel anytime
+                  Skip or cancel anytime
                 </div>
               </div>
             </div>
@@ -976,8 +868,10 @@ export default function Home() {
               <button className="premium-btn" style={{
                 fontSize: 'var(--scale-xl)',
                 padding: '1.75rem 5rem',
-                background: 'var(--gradient-green)',
-                color: '#000000',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: '#FFFFFF',
                 fontWeight: 700,
                 minWidth: '350px',
               }}>
@@ -1037,7 +931,7 @@ export default function Home() {
                 letterSpacing: '-0.04em',
                 lineHeight: 1.2,
                 fontFamily: 'var(--font-display)',
-                color: '#F8FAFC',
+                color: '#FFFFFF',
                 margin: '0 0 2.5rem 0',
                 textTransform: 'uppercase',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(232,236,243,0.2)',
@@ -1084,9 +978,10 @@ export default function Home() {
                 textAlign: 'center',
                 flex: '1',
                 maxWidth: '400px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
@@ -1105,7 +1000,7 @@ export default function Home() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: 'var(--scale-3xl)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   fontWeight: 700,
                   fontFamily: 'var(--font-body)',
                   margin: '0 auto 2.5rem auto',
@@ -1116,7 +1011,7 @@ export default function Home() {
                   fontSize: 'var(--scale-xl)',
                   fontWeight: 600,
                   fontFamily: 'var(--font-display)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   marginBottom: '1.5rem',
                   letterSpacing: '-0.03em',
                 }}>
@@ -1124,7 +1019,7 @@ export default function Home() {
                 </div>
                 <p style={{
                   fontSize: 'var(--scale-lg)',
-                  color: 'var(--text-secondary)',
+                  color: 'rgba(255, 255, 255, 0.9)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: '0 0 2rem 0',
@@ -1138,7 +1033,7 @@ export default function Home() {
                   fontSize: 'var(--scale-base)',
                   padding: '1rem 2rem',
                   background: 'var(--gradient-green)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   fontWeight: 600,
                 }}>
                   View Lab Report (PDF)
@@ -1151,9 +1046,10 @@ export default function Home() {
                 textAlign: 'center',
                 flex: '1',
                 maxWidth: '400px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
@@ -1183,7 +1079,7 @@ export default function Home() {
                   fontSize: 'var(--scale-xl)',
                   fontWeight: 600,
                   fontFamily: 'var(--font-display)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   marginBottom: '1.5rem',
                   letterSpacing: '-0.03em',
                 }}>
@@ -1191,7 +1087,7 @@ export default function Home() {
                 </div>
                 <p style={{
                   fontSize: 'var(--scale-lg)',
-                  color: '#333333',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: 0,
@@ -1206,9 +1102,10 @@ export default function Home() {
                 textAlign: 'center',
                 flex: '1',
                 maxWidth: '400px',
-                background: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
@@ -1227,7 +1124,7 @@ export default function Home() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: 'var(--scale-3xl)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   fontWeight: 700,
                   fontFamily: 'var(--font-body)',
                   margin: '0 auto 2.5rem auto',
@@ -1238,7 +1135,7 @@ export default function Home() {
                   fontSize: 'var(--scale-xl)',
                   fontWeight: 600,
                   fontFamily: 'var(--font-display)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   marginBottom: '1.5rem',
                   letterSpacing: '-0.03em',
                 }}>
@@ -1246,7 +1143,7 @@ export default function Home() {
                 </div>
                 <p style={{
                   fontSize: 'var(--scale-lg)',
-                  color: '#333333',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: 0,
@@ -1285,7 +1182,7 @@ export default function Home() {
                   fontSize: 'var(--scale-xl)',
                   padding: '1.75rem 5rem',
                   background: 'var(--gradient-green)',
-                  color: '#000000',
+                  color: '#FFFFFF',
                   fontWeight: 700,
                   minWidth: '350px',
                 }}>

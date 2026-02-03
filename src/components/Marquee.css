@@ -1,0 +1,53 @@
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+}
+
+.marquee-line {
+  display: block;
+  width: 200%;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  mix-blend-mode: soft-light;
+  line-height: 3.0;
+}
+
+.marquee-left {
+  animation: marqueeLeft 40s linear infinite;
+}
+
+.marquee-right {
+  animation: marqueeRight 35s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left,
+  .marquee-right {
+    animation: none;
+  }
+}
