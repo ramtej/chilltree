@@ -1,23 +1,52 @@
 import { Link } from "react-router-dom";
-import { products } from "../data/products";
 import Marquee from "../components/Marquee";
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 4);
-
-  const productImageMap = {
-    1: "/featured-1.png",
-    2: "/featured-2.png",
-    3: "/featured-3.png",
-    4: "/featured-4.png",
-  };
-
   const handleAddToCart = (productId) => {
     console.log("Add to cart:", productId);
   };
 
   return (
     <>
+      {/* Large Logo Section */}
+      <div style={{
+        position: 'fixed',
+        top: '20px',
+        left: '20px',
+        zIndex: 999,
+        display: 'flex',
+        alignItems: 'center',
+      }}>
+        <Link
+          to="/"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            textDecoration: 'none',
+            transition: 'all 0.3s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.1)';
+            e.currentTarget.style.filter = 'drop-shadow(0 0 30px rgba(212, 175, 55, 0.6))';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.filter = 'none';
+          }}
+        >
+          <img
+            src="/chill tree white.png"
+            alt="Chilltree"
+            style={{
+              height: "120px",
+              width: "auto",
+              objectFit: "contain",
+            }}
+          />
+        </Link>
+      </div>
+
+      <div style={{ marginTop: '120px' }}>
       {/* Hero Section - Luxury Minimal Experience */}
       <section className="image-section" style={{ minHeight: '100vh', position: 'relative' }}>
         {/* Hero Background Video */}
@@ -1193,6 +1222,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }
