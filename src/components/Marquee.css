@@ -2,21 +2,25 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: transparent;
+  background: rgba(10, 10, 15, 0.8);
+  padding: 0.5rem 0;
   pointer-events: none;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 .marquee-line {
   display: block;
   width: 200%;
-  font-size: clamp(0.75rem, 2vw, 1rem);
-  font-weight: 300;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
-  mix-blend-mode: soft-light;
-  line-height: 3.0;
+  mix-blend-mode: normal;
+  line-height: 2.0;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .marquee-left {
@@ -24,7 +28,7 @@
 }
 
 .marquee-right {
-  animation: marqueeRight 35s linear infinite;
+  animation: marqueeRight 40s linear infinite;
 }
 
 @keyframes marqueeLeft {

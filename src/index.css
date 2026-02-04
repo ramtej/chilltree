@@ -1,48 +1,59 @@
-/* Chilltree Brand Color System - Blue Identity Dominant */
+/* Awwwards-Level Cinematic Theme - Premium Immersive Experience */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* BRAND PYRAMID - Blue Identity (70-75%) */
-  --blue-deep: #242965;
-  --blue-primary: #2e3693;
-  --blue-secondary: #2b639b;
-  --blue-highlight: #2468af;
-  --blue-dark: #2c3680;
+  /* CINEMATIC DARK BASE - Obsidian Depths (80%) */
+  --obsidian-deep: #0A0A0F;
+  --obsidian-primary: #0F0F1A;
+  --obsidian-secondary: #1A1A2E;
+  --obsidian-highlight: #16213E;
+  --obsidian-dark: #0D0D15;
   
-  /* SUPPORT COLORS - Silver Structure (15-20%) */
-  --silver-primary: #C0C0C0;
-  --silver-secondary: #E8E8E8;
+  /* METALLIC ACCENTS - Liquid Gold (12%) */
+  --gold-liquid: #FFD700;
+  --gold-molten: #FFA500;
+  --gold-antique: #B8860B;
+  --gold-shimmer: #FFF8DC;
   
-  /* PREMIUM TRIGGER - Gold (3-5%) */
-  --gold-primary: #D4AF37;
+  /* ELECTRIC ACCENTS - Neon Cyan (5%) */
+  --cyan-electric: #00FFFF;
+  --cyan-neon: #00E5FF;
+  --cyan-glow: #40E0D0;
+  --cyan-soft: #7FFFD4;
   
-  /* ACTION & SAVINGS - Green (3-5%) */
-  --green-primary: #10B981;
+  /* STRUCTURE - Platinum Silver (3%) */
+  --platinum-primary: #E5E4E2;
+  --platinum-secondary: #C0C0C0;
+  --platinum-soft: #F5F5F5;
   
-  /* TEXT HIERARCHY */
+  /* TEXT HIERARCHY - Cinematic Gradients */
   --text-primary: #FFFFFF;
-  --text-secondary: #F8FAFC;
-  --text-muted: #E2E8F0;
-  --text-accent: #F1F5F9;
+  --text-secondary: #E8E8E8;
+  --text-muted: #B8B8B8;
+  --text-accent: #FFD700;
+  --text-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #00FFFF 100%);
   
-  /* Glass System - Blue Dominant */
-  --glass-dark: rgba(36, 41, 101, 0.85);
-  --glass-medium: rgba(46, 54, 147, 0.9);
-  --glass-border: rgba(192, 192, 192, 0.15);
-  --glass-blur: blur(24px);
+  /* Glass System - Cinematic Transparency */
+  --glass-dark: rgba(10, 10, 15, 0.85);
+  --glass-medium: rgba(15, 15, 26, 0.9);
+  --glass-light: rgba(22, 33, 62, 0.7);
+  --glass-border: rgba(255, 215, 0, 0.2);
+  --glass-blur: blur(32px);
   
-  /* Brand Gradients - Blue Dominant Only */
-  --gradient-blue: linear-gradient(135deg, #242965 0%, #2e3693 50%, #2b639b 100%);
-  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #D4AF37 100%);
-  --gradient-green: linear-gradient(135deg, #10B981 0%, #10B981 100%);
-  --gradient-silver: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 100%);
+  /* Cinematic Gradients - Premium Flow */
+  --gradient-obsidian: linear-gradient(135deg, #0A0A0F 0%, #0F0F1A 50%, #1A1A2E 100%);
+  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #B8860B 100%);
+  --gradient-cyan: linear-gradient(135deg, #00FFFF 0%, #00E5FF 50%, #40E0D0 100%);
+  --gradient-platinum: linear-gradient(135deg, #E5E4E2 0%, #C0C0C0 50%, #F5F5F5 100%);
+  --gradient-cinematic: linear-gradient(135deg, #0A0A0F 0%, #FFD700 25%, #00FFFF 75%, #0F0F1A 100%);
   
-  /* Professional Shadows - Blue Base */
-  --shadow-premium: 0 25px 80px rgba(36, 41, 101, 0.9);
-  --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
-  --shadow-green: 0 0 30px rgba(16, 185, 129, 0.3);
-  --shadow-card: 0 15px 50px rgba(36, 41, 101, 0.7);
-  --shadow-hover: 0 30px 100px rgba(212, 175, 55, 0.4);
+  /* Premium Shadows - Cinematic Depth */
+  --shadow-premium: 0 40px 120px rgba(10, 10, 15, 0.95);
+  --shadow-gold: 0 0 50px rgba(255, 215, 0, 0.6);
+  --shadow-cyan: 0 0 40px rgba(0, 255, 255, 0.5);
+  --shadow-card: 0 25px 80px rgba(15, 15, 26, 0.8);
+  --shadow-hover: 0 50px 150px rgba(255, 215, 0, 0.4);
+  --shadow-glow: 0 0 80px rgba(0, 229, 255, 0.3);
   
   /* Typography System */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -99,7 +110,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--blue-deep);
+  background: var(--obsidian-deep);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -114,22 +125,30 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: var(--text-primary);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 900;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h2 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
+  color: var(--gold-liquid);
+  text-shadow: 0 2px 20px rgba(255, 215, 0, 0.4);
 }
 
 h3 {
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 700;
+  color: var(--cyan-electric);
+  text-shadow: 0 2px 15px rgba(0, 255, 255, 0.3);
 }
 
 p {
@@ -141,13 +160,15 @@ p {
 
 /* Professional Links */
 a {
-  color: var(--gold-primary);
+  color: var(--gold-liquid);
   text-decoration: none;
   transition: all var(--transition-smooth);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 a:hover {
-  color: var(--silver-primary);
+  color: var(--cyan-electric);
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
 }
 
 /* Professional Buttons */
@@ -162,7 +183,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: var(--gradient-gold);
-  color: var(--blue-deep);
+  color: var(--obsidian-deep);
   border: none;
   border-radius: var(--radius-full);
   cursor: pointer;
@@ -175,19 +196,21 @@ a:hover {
 .premium-btn:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
+  background: var(--gradient-cinematic);
 }
 
 .premium-btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--silver-primary);
-  box-shadow: none;
+  border: 2px solid var(--cyan-electric);
+  box-shadow: var(--shadow-cyan);
 }
 
 .premium-btn-secondary:hover {
-  background: var(--silver-primary);
-  color: var(--blue-deep);
+  background: var(--cyan-electric);
+  color: var(--obsidian-deep);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
 }
 
 .premium-btn:active {
@@ -207,7 +230,7 @@ a:hover {
 .premium-card:hover {
   transform: translateY(-12px);
   box-shadow: var(--shadow-card);
-  border-color: var(--silver-primary);
+  border-color: var(--gold-liquid);
 }
 
 /* Glass Panels */
@@ -217,7 +240,7 @@ a:hover {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-3xl);
   padding: 3.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 /* Video Optimization */
@@ -393,10 +416,10 @@ video::-moz-media-controls {
 
 /* Price Styling */
 .price-gold {
-  color: var(--gold-primary);
+  color: var(--gold-liquid);
   font-weight: 600;
   font-size: 1.5rem;
-  text-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
+  text-shadow: 0 2px 15px rgba(255, 215, 0, 0.5);
 }
 
 /* Premium Badge */
@@ -406,7 +429,7 @@ video::-moz-media-controls {
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
   background: var(--gradient-gold);
-  color: var(--blue-deep);
+  color: var(--obsidian-deep);
   font-size: var(--scale-sm);
   font-weight: 700;
   text-transform: uppercase;
@@ -463,23 +486,23 @@ video::-moz-media-controls {
 }
 
 .premium-orb-gold {
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
-  box-shadow: 0 0 80px rgba(212, 175, 55, 0.3);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, transparent 70%);
+  box-shadow: 0 0 120px rgba(255, 215, 0, 0.4);
 }
 
 .premium-orb-silver {
-  background: radial-gradient(circle, rgba(192, 192, 192, 0.3) 0%, transparent 70%);
-  box-shadow: 0 0 60px rgba(192, 192, 192, 0.2);
+  background: radial-gradient(circle, rgba(229, 228, 226, 0.4) 0%, transparent 70%);
+  box-shadow: 0 0 80px rgba(229, 228, 226, 0.3);
 }
 
-.premium-orb-green {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
-  box-shadow: 0 0 60px rgba(16, 185, 129, 0.2);
+.premium-orb-cyan {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.5) 0%, transparent 70%);
+  box-shadow: 0 0 100px rgba(0, 255, 255, 0.4);
 }
 
-.premium-orb-blue {
-  background: radial-gradient(circle, rgba(58, 110, 165, 0.3) 0%, transparent 70%);
-  box-shadow: 0 0 60px rgba(58, 110, 165, 0.2);
+.premium-orb-obsidian {
+  background: radial-gradient(circle, rgba(10, 10, 15, 0.8) 0%, transparent 70%);
+  box-shadow: 0 0 60px rgba(15, 15, 26, 0.6);
 }
 
 /* Trust Badge */
@@ -490,9 +513,10 @@ video::-moz-media-controls {
   padding: 0.5rem 1rem;
   background: var(--glass-dark);
   backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--silver-primary);
+  border: 1px solid var(--cyan-electric);
   border-radius: 999px;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
+  box-shadow: var(--shadow-cyan);
 }

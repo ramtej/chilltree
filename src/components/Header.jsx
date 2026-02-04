@@ -57,12 +57,12 @@ export default function Header() {
         left: "50%",
         transform: "translateX(-50%)",
         zIndex: 1000,
-        background: "rgba(7, 20, 38, 0.72)",
+        background: "rgba(10, 10, 15, 0.72)",
         backdropFilter: "blur(24px)",
         borderRadius: "999px",
         padding: "0.875rem 2.5rem",
-        boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.15)",
-        border: "1px solid rgba(255, 255, 255, 0.12)",
+        boxShadow: "0 12px 40px rgba(10, 10, 15, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.2)",
+        border: "1px solid rgba(255, 215, 0, 0.15)",
         transition: "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
         maxWidth: "85vw",
         display: "flex",
@@ -94,21 +94,21 @@ export default function Header() {
                 padding: "0.625rem 1.125rem",
                 borderRadius: "999px",
                 background: isActive 
-                  ? "linear-gradient(135deg, rgba(212, 175, 55, 0.24), rgba(212, 175, 55, 0.08))"
+                  ? "linear-gradient(135deg, rgba(255, 215, 0, 0.24), rgba(255, 215, 0, 0.08))"
                   : "transparent",
                 transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
                 position: "relative",
-                border: isActive ? "1px solid rgba(212, 175, 55, 0.32)" : "1px solid transparent",
+                border: isActive ? "1px solid rgba(255, 215, 0, 0.32)" : "1px solid transparent",
                 letterSpacing: "0.025em",
                 textTransform: "uppercase",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
                   e.target.style.color = "#FFFFFF";
-                  e.target.style.background = "rgba(212, 175, 55, 0.08)";
-                  e.target.style.border = "1px solid rgba(212, 175, 55, 0.16)";
+                  e.target.style.background = "rgba(255, 215, 0, 0.08)";
+                  e.target.style.border = "1px solid rgba(255, 215, 0, 0.16)";
                   e.target.style.transform = "translateY(-1px)";
-                  e.target.style.boxShadow = "0 4px 16px rgba(212, 175, 55, 0.12)";
+                  e.target.style.boxShadow = "0 4px 16px rgba(255, 215, 0, 0.12)";
                 }
               }}
               onMouseLeave={(e) => {
@@ -132,8 +132,8 @@ export default function Header() {
                     width: "3px",
                     height: "3px",
                     borderRadius: "50%",
-                    background: "#F5D76E",
-                    boxShadow: "0 0 12px rgba(245, 215, 110, 0.8)",
+                    background: "#FFD700",
+                    boxShadow: "0 0 12px rgba(255, 215, 0, 0.8)",
                   }}
                 />
               )}
@@ -148,29 +148,29 @@ export default function Header() {
         style={{
           display: "inline-block",
           padding: "0.6875rem 1.75rem",
-          background: "linear-gradient(135deg, #F5D76E, #C9A227, #8C6A15)",
-          color: "#071426",
+          background: "linear-gradient(135deg, #FFD700, #FFA500, #B8860B)",
+          color: "#0A0A0F",
           textDecoration: "none",
           fontSize: "0.8125rem",
           fontWeight: "600",
           borderRadius: "999px",
           transition: "all 0.25s cubic-bezier(0.23, 1, 0.32, 1)",
-          boxShadow: "0 6px 20px rgba(212, 175, 55, 0.32)",
-          border: "1px solid rgba(245, 215, 110, 0.24)",
+          boxShadow: "0 6px 20px rgba(255, 215, 0, 0.4)",
+          border: "1px solid rgba(255, 215, 0, 0.3)",
           transform: "translateY(0)",
           letterSpacing: "0.05em",
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "translateY(-2px)";
-          e.currentTarget.style.boxShadow = "0 10px 30px rgba(212, 175, 55, 0.48)";
-          e.currentTarget.style.background = "linear-gradient(135deg, #F5D76E, #F5D76E, #C9A227)";
+          e.currentTarget.style.boxShadow = "0 10px 30px rgba(255, 215, 0, 0.6)";
+          e.currentTarget.style.background = "linear-gradient(135deg, #FFD700, #FFD700, #FFA500)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = "translateY(0)";
-          e.currentTarget.style.boxShadow = "0 6px 20px rgba(212, 175, 55, 0.32)";
-          e.currentTarget.style.background = "linear-gradient(135deg, #F5D76E, #C9A227, #8C6A15)";
-          e.currentTarget.style.border = "1px solid rgba(245, 215, 110, 0.24)";
+          e.currentTarget.style.boxShadow = "0 6px 20px rgba(255, 215, 0, 0.4)";
+          e.currentTarget.style.background = "linear-gradient(135deg, #FFD700, #FFA500, #B8860B)";
+          e.currentTarget.style.border = "1px solid rgba(255, 215, 0, 0.3)";
         }}
       >
         Sign In
