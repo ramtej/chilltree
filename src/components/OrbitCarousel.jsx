@@ -59,9 +59,9 @@ const OrbitCarousel = () => {
   };
 
   // Calculate card positions
-  const radius = 300; // Increased radius for more spacing
+  const radius = 280; // Increased from 220 for more space
   const cardCount = products.length;
-  const angleStep = (2 * Math.PI) / cardCount;
+  const angleStep = (2 * Math.PI) / products.length;
 
   return (
     <div 
@@ -120,8 +120,8 @@ const OrbitCarousel = () => {
               opacity: isHovered ? 1 : opacity,
               zIndex: isHovered ? 100 : zIndex,
               transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)',
-              width: isHovered ? '320px' : '240px',
-              height: isHovered ? '400px' : '300px',
+              width: isHovered ? '360px' : '280px', // Increased from 320px/240px
+              height: isHovered ? '460px' : '340px', // Increased from 400px/300px
               borderRadius: '24px',
               background: 'rgba(255, 255, 255, 0.08)',
               backdropFilter: 'blur(20px)',
