@@ -5,14 +5,30 @@ import "./Products.css";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedSubcategory, setSelectedSubcategory] = useState("All");
   const [sortBy, setSortBy] = useState("featured");
   const [priceRange, setPriceRange] = useState("all");
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
 
   const getProductCategory = (product) => {
     return product.category || "Energy Shots";
   };
 
-  const categories = ["All", "Energy Shots", "Pills"];
+  const getSubcategory = (product) => {
+    return product.subcategory || "Mit + Kava";
+  };
+
+  const categories = [
+    { 
+      name: "Energy Shots", 
+      subcategories: ["Mit + Kava", "Kava + Kana"]
+    },
+    { 
+      name: "Pills", 
+      subcategories: ["Mit + Kava", "Kava + Kana"]
+    }
+  ];
+
   const sortOptions = [
     { value: "featured", label: "Featured" },
     { value: "price-low", label: "Price: Low to High" },
@@ -27,9 +43,17 @@ export default function Products() {
   ];
 
   const getFilteredAndSortedProducts = () => {
-    let filtered = selectedCategory === "All"
-      ? products
-      : products.filter((product) => getProductCategory(product) === selectedCategory);
+    let filtered = products;
+
+    // Category filter
+    if (selectedCategory !== "All") {
+      filtered = filtered.filter((product) => getProductCategory(product) === selectedCategory);
+    }
+
+    // Subcategory filter
+    if (selectedSubcategory !== "All") {
+      filtered = filtered.filter((product) => getSubcategory(product) === selectedSubcategory);
+    }
 
     // Price range filter
     if (priceRange !== "all") {
@@ -53,6 +77,17 @@ export default function Products() {
   };
 
   const filteredProducts = getFilteredAndSortedProducts();
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setSelectedSubcategory("All");
+    setIsCategoryDropdownOpen(false);
+  };
+
+  const handleSubcategorySelect = (subcategory) => {
+    setSelectedSubcategory(subcategory);
+    setIsCategoryDropdownOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,58 +148,99 @@ export default function Products() {
       <section className="products-filter-section">
         <div className="products-inner">
           <div className="filter-bar">
-            <div className="filter-group">
-              <label className="filter-label">Category</label>
-              <div className="filter-buttons">
-                {categories.map((category, index) => (
-                  <button
-                    key={category}
-                    type="button"
-                    onClick={() => setSelectedCategory(category)}
-                    className={`filter-btn ${
-                      selectedCategory === category ? "filter-btn--active" : "filter-btn--default"
-                    }`}
-                    style={{ '--filter-index': index }}
-                  >
-                    {category}
-                  </button>
-                ))}
+            <div className="filter-left">
+              <div className="filter-group">
+                <label className="filter-label">Availability</label>
+                <select className="filter-select">
+                  <option>In Stock</option>
+                  <option>Out of Stock</option>
+                  <option>All</option>
+                </select>
+              </div>
+
+              <div className="filter-group">
+                <label className="filter-label">Price</label>
+                <select 
+                  className="filter-select"
+                  value={priceRange}
+                  onChange={(e) => setPriceRange(e.target.value)}
+                >
+                  {priceRanges.map(range => (
+                    <option key={range.value} value={range.value}>
+                      {range.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="filter-group">
+                <label className="filter-label">Product Type</label>
+                <div 
+                  className="category-dropdown"
+                  onMouseEnter={() => setIsCategoryDropdownOpen(true)}
+                  onMouseLeave={() => setIsCategoryDropdownOpen(false)}
+                >
+                  <div className="category-selected">
+                    {selectedCategory === "All" ? "All Products" : selectedCategory}
+                    <span className="dropdown-arrow">▼</span>
+                  </div>
+                  
+                  {isCategoryDropdownOpen && (
+                    <div className="category-dropdown-menu">
+                      <div className="dropdown-section">
+                        <div className="dropdown-title">Categories</div>
+                        {categories.map((category) => (
+                          <div 
+                            key={category.name}
+                            className="dropdown-item category-item"
+                            onClick={() => handleCategorySelect(category.name)}
+                          >
+                            {category.name}
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {selectedCategory !== "All" && (
+                        <div className="dropdown-section">
+                          <div className="dropdown-title">Subcategories</div>
+                          {categories
+                            .find(cat => cat.name === selectedCategory)
+                            ?.subcategories.map((subcategory) => (
+                              <div 
+                                key={subcategory}
+                                className="dropdown-item subcategory-item"
+                                onClick={() => handleSubcategorySelect(subcategory)}
+                              >
+                                {subcategory}
+                              </div>
+                            ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className="filter-group">
-              <label className="filter-label">Sort By</label>
-              <select 
-                className="filter-select"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-              >
-                {sortOptions.map(option => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+            <div className="filter-right">
+              <div className="filter-group">
+                <label className="filter-label">Sort by</label>
+                <select 
+                  className="filter-select"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                >
+                  {sortOptions.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="product-count">
+                {filteredProducts.length} products
+              </div>
             </div>
-
-            <div className="filter-group">
-              <label className="filter-label">Price Range</label>
-              <select 
-                className="filter-select"
-                value={priceRange}
-                onChange={(e) => setPriceRange(e.target.value)}
-              >
-                {priceRanges.map(range => (
-                  <option key={range.value} value={range.value}>
-                    {range.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="results-count">
-            Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
           </div>
         </div>
       </section>

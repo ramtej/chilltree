@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <footer
       style={{
-        backgroundColor: "var(--blue-deep)",
-        backgroundImage: "var(--gradient-blue)",
-        borderTop: "3px solid var(--gold-primary)",
+        background: "rgba(11,15,26,0.65)",
+        backdropFilter: "blur(12px)",
+        borderTop: "1px solid rgba(0, 255, 255, 0.3)",
         marginTop: "auto",
-        color: "var(--text-primary)",
-        boxShadow: "0 -4px 20px rgba(36, 41, 101, 0.3)",
+        color: "#E5E7EB",
+        boxShadow: "0 -4px 20px rgba(0, 0, 0, 0.2)",
       }}
     >
       {/* Top Row: Main Content */}
@@ -39,7 +39,7 @@ export default function Footer() {
           <p
             style={{
               fontSize: "0.875rem",
-              color: "var(--text-secondary)",
+              color: "#E5E7EB",
               lineHeight: "1.6",
               margin: 0,
               maxWidth: "280px",
@@ -55,7 +55,7 @@ export default function Footer() {
             style={{
               fontSize: "0.75rem",
               fontWeight: "700",
-              color: "var(--text-muted)",
+              color: "#E5E7EB",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               margin: "0 0 1rem 0",
@@ -68,12 +68,12 @@ export default function Footer() {
               to="/"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Home
             </Link>
@@ -81,12 +81,12 @@ export default function Footer() {
               to="/products"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Products
             </Link>
@@ -94,12 +94,12 @@ export default function Footer() {
               to="/subscribe"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Subscribe
             </Link>
@@ -107,12 +107,12 @@ export default function Footer() {
               to="/about"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               About
             </Link>
@@ -120,12 +120,12 @@ export default function Footer() {
               to="/faq"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               FAQ
             </Link>
@@ -133,12 +133,12 @@ export default function Footer() {
               to="/contact"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Contact
             </Link>
@@ -151,7 +151,7 @@ export default function Footer() {
             style={{
               fontSize: "0.75rem",
               fontWeight: "700",
-              color: "var(--text-muted)",
+              color: "#E5E7EB",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               margin: "0 0 1rem 0",
@@ -164,12 +164,12 @@ export default function Footer() {
               to="/labs"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Lab Reports
             </Link>
@@ -177,12 +177,12 @@ export default function Footer() {
               to="/labs"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Download Reports
             </Link>
@@ -190,12 +190,12 @@ export default function Footer() {
               to="/stores"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               Store Locator
             </Link>
@@ -203,12 +203,12 @@ export default function Footer() {
               to="/disclaimer"
               style={{
                 textDecoration: "none",
-                color: "var(--text-secondary)",
+                color: "#E5E7EB",
                 fontSize: "0.875rem",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--text-secondary)")}
+              onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+              onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
             >
               21+ Disclaimer
             </Link>
@@ -221,7 +221,7 @@ export default function Footer() {
             style={{
               fontSize: "0.75rem",
               fontWeight: "700",
-              color: "var(--text-muted)",
+              color: "#E5E7EB",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               margin: "0 0 1rem 0",
@@ -245,7 +245,7 @@ export default function Footer() {
               <a
                 href="mailto:info@chilltree.com"
                 style={{
-                  color: "var(--gold-primary)",
+                  color: "#00FFFF",
                   textDecoration: "none",
                   fontSize: "0.875rem",
                   transition: "color 0.2s ease",
@@ -272,26 +272,26 @@ export default function Footer() {
                 <a
                   href="tel:+1234567890"
                   style={{
-                    color: "var(--gold-primary)",
+                    color: "#00FFFF",
                     textDecoration: "none",
                     fontSize: "0.875rem",
                     transition: "color 0.2s ease",
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = "var(--silver-primary)")}
-                  onMouseLeave={(e) => (e.target.style.color = "var(--gold-primary)")}
+                  onMouseEnter={(e) => (e.target.style.color = "#FFFFFF")}
+                  onMouseLeave={(e) => (e.target.style.color = "#00FFFF")}
                 >
                   +1 (234) 567-8900
                 </a>
                 <a
                   href="tel:+1234567891"
                   style={{
-                    color: "var(--gold-primary)",
+                    color: "#00FFFF",
                     textDecoration: "none",
                     fontSize: "0.875rem",
                     transition: "color 0.2s ease",
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = "var(--silver-primary)")}
-                  onMouseLeave={(e) => (e.target.style.color = "var(--gold-primary)")}
+                  onMouseEnter={(e) => (e.target.style.color = "#FFFFFF")}
+                  onMouseLeave={(e) => (e.target.style.color = "#00FFFF")}
                 >
                   +1 (234) 567-8901
                 </a>
@@ -306,7 +306,7 @@ export default function Footer() {
             style={{
               fontSize: "0.75rem",
               fontWeight: "700",
-              color: "var(--text-muted)",
+              color: "#E5E7EB",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               margin: "0 0 1rem 0",
@@ -330,23 +330,23 @@ export default function Footer() {
                   width: "40px",
                   height: "40px",
                   borderRadius: "50%",
-                  border: "1px solid var(--silver-primary)",
+                  border: "1px solid rgba(255,255,255,0.18)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   textDecoration: "none",
                   transition: "all 0.2s ease",
-                  backgroundColor: "rgba(192, 192, 192, 0.1)",
+                  backgroundColor: "rgba(0, 255, 255, 0.08)",
                   overflow: "hidden",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "var(--gold-primary)";
-                  e.currentTarget.style.borderColor = "var(--gold-primary)";
+                  e.currentTarget.style.backgroundColor = "#00FFFF";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
                   e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "rgba(192, 192, 192, 0.1)";
-                  e.currentTarget.style.borderColor = "var(--silver-primary)";
+                  e.currentTarget.style.backgroundColor = "rgba(0, 255, 255, 0.1)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
                 aria-label={social.name}
@@ -369,7 +369,7 @@ export default function Footer() {
       {/* Bottom Row: Copyright */}
       <div
         style={{
-          borderTop: "1px solid var(--silver-primary)",
+          borderTop: "1px solid rgba(0, 255, 255, 0.2)",
           padding: "1rem 2rem",
           maxWidth: "1400px",
           margin: "0 auto",
@@ -386,12 +386,12 @@ export default function Footer() {
             to="/terms"
             style={{
               textDecoration: "none",
-              color: "var(--text-muted)",
+              color: "#E5E7EB",
               fontSize: "0.875rem",
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.target.style.color = "var(--gold-primary)")}
-            onMouseLeave={(e) => (e.target.style.color = "var(--text-muted)")}
+            onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
+            onMouseLeave={(e) => (e.target.style.color = "#E5E7EB")}
           >
             Privacy Policy
           </Link>
@@ -404,7 +404,7 @@ export default function Footer() {
               transition: "color 0.2s ease",
               marginLeft: "0.5rem",
             }}
-            onMouseEnter={(e) => (e.target.style.color = "#F5D76E")}
+            onMouseEnter={(e) => (e.target.style.color = "#00FFFF")}
             onMouseLeave={(e) => (e.target.style.color = "#8FA0B5")}
           >
             Terms of Service
