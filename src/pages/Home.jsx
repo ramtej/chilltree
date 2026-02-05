@@ -8,6 +8,12 @@ import Marquee from "../components/Marquee";
 
 import OrbitCarousel from "../components/OrbitCarousel";
 
+import OrbitCards from "../components/OrbitCards";
+
+import ProductCard from "../components/ProductCard";
+
+import { products } from "../data/products";
+
 
 
 
@@ -967,7 +973,7 @@ export default function Home() {
 
 
 
-            {/* Orbiting Product Carousel */}
+            {/* Products Grid - Circular Carousel */}
 
 
 
@@ -975,7 +981,63 @@ export default function Home() {
 
 
 
-              <OrbitCarousel />
+              <div className="circular-carousel">
+
+
+
+                <div className="carousel-container">
+
+
+
+                  {products.slice(0, 12).map((product, index) => (
+
+
+
+                    <div 
+
+
+
+                      key={product.id} 
+
+
+
+                      className="carousel-card"
+
+
+                      style={{ 
+
+
+                        '--card-index': index,
+
+
+                        '--total-cards': 12
+
+
+                      }}
+
+
+
+                    >
+
+
+
+                      <ProductCard product={product} index={index} />
+
+
+
+                    </div>
+
+
+
+                  ))}
+
+
+
+                </div>
+
+
+
+              </div>
 
 
 

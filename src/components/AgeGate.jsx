@@ -15,7 +15,7 @@ export default function AgeGate() {
       <div className="agegate-popup">
         {/* Logo */}
         <div className="agegate-logo">
-          <img src="/logo.png" alt="Chilltree" height="60" />
+          <img src="/logo.png" alt="Chilltree" height="120" />
         </div>
 
         {/* Age Verification Text */}

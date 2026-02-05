@@ -116,31 +116,13 @@ export default function Products() {
           <div className="hero-particles"></div>
         </div>
         <div className="hero-content">
-          <div className="hero-badge fade-in-up">
-            <span>✓</span>
-            <span>Professional Wellness</span>
-          </div>
           <h1 className="hero-title fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <span className="hero-title-gold">Premium</span> Collection
+            <span className="hero-title-gold">Shop</span> Products
           </h1>
           <p className="hero-subtitle fade-in-up" style={{ animationDelay: '0.4s' }}>
             Discover lab-tested botanicals that deliver extraordinary results. 
             Professional wellness without compromise.
           </p>
-          <div className="hero-stats fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="stat-item">
-              <div className="stat-number">10,000+</div>
-              <div className="stat-label">Happy Customers</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">3</div>
-              <div className="stat-label">Premium Products</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">25%</div>
-              <div className="stat-label">Subscribe Savings</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -245,21 +227,32 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Grid - Circular Carousel */}
       <section className="products-grid-section">
         <div className="products-inner">
-          <div className="products-grid">
-            {filteredProducts.length > 0 ? (
-              filteredProducts.map((product, index) => (
-                <ProductCard key={product.id} product={product} index={index} />
-              ))
-            ) : (
-              <div className="products-empty">
-                <div className="empty-icon">🔍</div>
-                <h3>No products found</h3>
-                <p>Try adjusting your filters to see more results</p>
-              </div>
-            )}
+          <div className="circular-carousel">
+            <div className="carousel-container">
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product, index) => (
+                  <div 
+                    key={product.id} 
+                    className="carousel-card"
+                    style={{ 
+                      '--card-index': index,
+                      '--total-cards': filteredProducts.length
+                    }}
+                  >
+                    <ProductCard product={product} index={index} />
+                  </div>
+                ))
+              ) : (
+                <div className="products-empty">
+                  <div className="empty-icon">🔍</div>
+                  <h3>No products found</h3>
+                  <p>Try adjusting your filters to see more results</p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
