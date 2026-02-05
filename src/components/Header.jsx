@@ -158,14 +158,17 @@ export default function Header() {
                     <div style={{ padding: "0.5rem 1rem", fontSize: "0.75rem", fontWeight: "600", color: "#00FFFF", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                       Categories
                     </div>
+                    <div style={{ padding: "0.5rem 1rem", fontSize: "0.75rem", fontWeight: "600", color: "#00FFFF", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                      Energy Shots
+                    </div>
                     <Link
-                      to="/products/energy-shots"
+                      to="/products/energy-shots/mit-kava"
                       style={{
                         display: "block",
-                        padding: "0.75rem 1.5rem",
+                        padding: "0.625rem 2rem",
                         color: "#E5E7EB",
                         textDecoration: "none",
-                        fontSize: "0.875rem",
+                        fontSize: "0.8125rem",
                         transition: "all 0.2s ease",
                       }}
                       onMouseEnter={(e) => {
@@ -178,16 +181,16 @@ export default function Header() {
                       }}
                       onClick={() => setIsProductsDropdownOpen(false)}
                     >
-                      Energy Shots
+                      Mit + Kava
                     </Link>
                     <Link
-                      to="/products/pills"
+                      to="/products/energy-shots/kava-kana"
                       style={{
                         display: "block",
-                        padding: "0.75rem 1.5rem",
+                        padding: "0.625rem 2rem",
                         color: "#E5E7EB",
                         textDecoration: "none",
-                        fontSize: "0.875rem",
+                        fontSize: "0.8125rem",
                         transition: "all 0.2s ease",
                       }}
                       onMouseEnter={(e) => {
@@ -200,7 +203,55 @@ export default function Header() {
                       }}
                       onClick={() => setIsProductsDropdownOpen(false)}
                     >
+                      Kava + Kana
+                    </Link>
+                    
+                    <div style={{ padding: "0.75rem 1rem 0.5rem", fontSize: "0.75rem", fontWeight: "600", color: "#00FFFF", textTransform: "uppercase", letterSpacing: "0.05em", borderTop: "1px solid rgba(255,255,255,0.1)", marginTop: "0.5rem" }}>
                       Pills
+                    </div>
+                    <Link
+                      to="/products/pills/mit-kava"
+                      style={{
+                        display: "block",
+                        padding: "0.625rem 2rem",
+                        color: "#E5E7EB",
+                        textDecoration: "none",
+                        fontSize: "0.8125rem",
+                        transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "#00FFFF";
+                        e.target.style.background = "rgba(0, 255, 255, 0.08)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "#E5E7EB";
+                        e.target.style.background = "transparent";
+                      }}
+                      onClick={() => setIsProductsDropdownOpen(false)}
+                    >
+                      Mit + Kava
+                    </Link>
+                    <Link
+                      to="/products/pills/kava-kana"
+                      style={{
+                        display: "block",
+                        padding: "0.625rem 2rem",
+                        color: "#E5E7EB",
+                        textDecoration: "none",
+                        fontSize: "0.8125rem",
+                        transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "#00FFFF";
+                        e.target.style.background = "rgba(0, 255, 255, 0.08)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "#E5E7EB";
+                        e.target.style.background = "transparent";
+                      }}
+                      onClick={() => setIsProductsDropdownOpen(false)}
+                    >
+                      Kava + Kana
                     </Link>
                     <Link
                       to="/products"

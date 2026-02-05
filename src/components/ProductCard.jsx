@@ -18,12 +18,6 @@ export default function ProductCard({ product, index }) {
     console.log("Quick add:", product.id);
   };
 
-  const productImages = [
-    product.image,
-    product.image.replace('.png', '-alt.png'),
-    product.image.replace('.png', '-detail.png')
-  ].filter((img, i, arr) => arr.indexOf(img) === i); // Remove duplicates
-
   const handleMouseEnter = () => {
     setIsHovered(true);
     // Start image carousel
@@ -31,7 +25,6 @@ export default function ProductCard({ product, index }) {
       setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
     }, 1500);
     
-    // Store interval ID to clear on mouse leave
     const card = document.getElementById(`product-card-${product.id}`);
     if (card) {
       card.imageInterval = interval;
@@ -48,9 +41,19 @@ export default function ProductCard({ product, index }) {
     }
   };
 
+  const productImages = [
+    product.image,
+    product.image.replace('.png', '-alt.png'),
+    product.image.replace('.png', '-detail.png')
+  ].filter((img, i, arr) => arr.indexOf(img) === i); // Remove duplicates
+
   const regularPrice = product.price;
   const subscribePrice = (product.price * 0.75).toFixed(2);
   const savings = ((1 - 0.75) * 100).toFixed(0);
+
+  const getSubcategory = (product) => {
+    return product.subcategory || "All";
+  };
 
   return (
     <Link 
@@ -112,6 +115,19 @@ export default function ProductCard({ product, index }) {
           <p className="product-description">{product.description}</p>
         </div>
         
+        {/* Subcategories */}
+        <div className="product-subcategories">
+          {getSubcategory(product) !== "All" && (
+            <div className="subcategory-list">
+              <span className="subcategory-label">Subcategories:</span>
+              <div className="subcategory-items">
+                <span className="subcategory-item">{getSubcategory(product)}</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Product Pricing */}
         <div className="product-pricing">
           <div className="price-row">
             <span className="current-price">${regularPrice.toFixed(2)}</span>
@@ -119,7 +135,8 @@ export default function ProductCard({ product, index }) {
             <span className="savings-badge">Save {savings}%</span>
           </div>
         </div>
-        
+
+        {/* Product Actions */}
         <div className="product-actions">
           <button 
             className="add-to-cart-btn"

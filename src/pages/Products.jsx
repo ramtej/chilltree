@@ -15,7 +15,7 @@ export default function Products() {
   };
 
   const getSubcategory = (product) => {
-    return product.subcategory || "Mit + Kava";
+    return product.subcategory || "All";
   };
 
   const categories = [
