@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 
-
+import './Home.css';
+import './Products.css';
 
 import Marquee from "../components/Marquee";
-
-
 
 import OrbitCarousel from "../components/OrbitCarousel";
 

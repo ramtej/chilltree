@@ -109,6 +109,51 @@
 .delete-btn:hover {
   background: #d32f2f;
   transform: translateY(-1px);
+
+  .actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: var(--brand-blue);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: var(--brand-blue-light);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
 }
 
 /* Modal Styles */

@@ -781,6 +781,7 @@
   justify-content: center;
   perspective: 1200px;
   margin: 4rem 0;
+  z-index: 10;
 }
 
 .carousel-container {
@@ -801,6 +802,7 @@
   margin-top: -225px;
   transform-style: preserve-3d;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
 }
 
 .carousel-card .product-card {
@@ -840,9 +842,110 @@
 
 /* Enhanced card visibility during rotation */
 .carousel-card .product-card {
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(212, 175, 55, 0.3);
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%) !important;
+  opacity: 1;
+  transition: all 0.3s ease;
+  color: #FFFFFF !important;
+}
+
+/* Override ProductCard styles for carousel */
+.carousel-card .product-card,
+.carousel-card .product-card * {
+  color: #FFFFFF !important;
+  background: transparent !important;
+}
+
+.carousel-card .product-card .product-image-container {
+  background: linear-gradient(135deg, #000000 0%, #0d0d0d 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  height: 320px !important;
+  width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.carousel-card .product-card .product-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.5s ease !important;
+}
+
+.carousel-card .product-card:hover .product-image {
+  transform: scale(1.1) !important;
+}
+
+.carousel-card .product-card h3,
+.carousel-card .product-card .product-name,
+.carousel-card .product-card .product-title {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 1.2rem !important;
+  margin-top: 1rem !important;
+  text-align: center !important;
+}
+
+.carousel-card .product-card p,
+.carousel-card .product-card .product-description,
+.carousel-card .product-card .product-price {
+  color: #E8E8E8 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 1rem !important;
+  text-align: center !important;
+  margin: 0.5rem 0 !important;
+}
+
+.carousel-card .product-card .product-badge {
+  color: #FFFFFF !important;
+  border: 1px solid rgba(212, 175, 55, 0.6) !important;
+  background: rgba(212, 175, 55, 0.25) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  position: absolute !important;
+  top: 15px !important;
+  left: 15px !important;
+  z-index: 10 !important;
+}
+
+.carousel-card .product-card .product-rating {
+  color: #D4AF37 !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  text-align: center !important;
+  margin: 0.5rem 0 !important;
+}
+
+.carousel-card .product-card .btn-primary,
+.carousel-card .product-card .add-to-cart-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #F4E4B1 100%) !important;
+  color: #000000 !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  padding: 12px 20px !important;
+  border-radius: 25px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4) !important;
+  margin: 1rem auto !important;
+  display: block !important;
+  width: fit-content !important;
+}
+
+.carousel-card .product-card .btn-primary:hover,
+.carousel-card .product-card .add-to-cart-btn:hover {
+  background: linear-gradient(135deg, #F4E4B1 0%, #D4AF37 100%) !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5) !important;
 }
 
 .carousel-card:hover .product-card {
@@ -856,6 +959,8 @@
 .carousel-card:nth-child(2) .product-card {
   border-color: rgba(212, 175, 55, 0.6);
   box-shadow: 0 30px 90px rgba(212, 175, 55, 0.3);
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 /* Responsive adjustments */

@@ -6,21 +6,25 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 32px;
+  gap: 20px;
   gap: 20px;
 }
 
 .orders-header h1 {
   margin: 0 0 8px 0;
   font-size: 32px;
-  font-weight: 600;
-  color: #ffffff;
+  font-weight: 700;
+  color: #1B4332;
 }
 
 .orders-header p {
   margin: 0;
   font-size: 15px;
-  color: #808080;
+  color: #8C6A15;
   font-weight: 500;
 }
 
@@ -139,6 +143,8 @@
   color: #666666;
   vertical-align: middle;
   font-weight: 500;
+  vertical-align: middle;
+  font-weight: 500;
 }
 
 .order-id {
@@ -158,9 +164,70 @@
   font-size: 14px;
 }
 
+.order-product {
+  color: #0F6B4F;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 .order-amount {
   font-weight: 600;
   color: #4CAF50;
+  font-variant-numeric: tabular-nums;
+}
+
+.order-payment-status {
+  color: #C9A227;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.product-select {
+  padding: 8px 12px;
+  border: 2px solid rgba(201, 162, 39, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1B4332;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.product-select:focus {
+  outline: none;
+  border-color: #C9A227;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+}
+
+.payment-status-select {
+  padding: 8px 12px;
+  border: 2px solid rgba(201, 162, 39, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.95);
+  color: #C9A227;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.payment-status-select:focus {
+  outline: none;
+  border-color: #C9A227;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+}
+
+.payment-status-select option {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1B4332;
+}
+
+.product-select option {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1B4332;
   font-variant-numeric: tabular-nums;
 }
 
@@ -264,6 +331,10 @@
 /* Premium Empty State */
 .empty-state {
   text-align: center;
+  padding: 80px 40px !important;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.03) 0%, rgba(245, 215, 110, 0.01) 100%);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
   padding: 80px 40px !important;
   background: linear-gradient(135deg, rgba(201, 162, 39, 0.03) 0%, rgba(245, 215, 110, 0.01) 100%);
   border-radius: 16px;
