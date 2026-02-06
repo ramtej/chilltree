@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useAdmin } from '../context/AdminContext';
 import { useToast } from '../context/ToastContext';
-import { EditIcon, DeleteIcon, AddIcon, SaveIcon, CancelIcon, CloseIcon } from '../components/Icons';
 import '../components/adminTable.css';
 import './Stores.css';
 import '../admin-variables.css';
@@ -124,7 +123,6 @@ export default function Stores() {
           <p className="page-subtitle">Manage store locations and information</p>
         </div>
         <button onClick={handleAddStore} className="add-store-button">
-          <AddIcon size={18} />
           <span>Add Store</span>
         </button>
       </div>
@@ -166,24 +164,18 @@ export default function Stores() {
                       {store.status}
                     </span>
                   </td>
-                  <td className="store-actions">
-                    <button
+                  <td className="actions">
+                    <button 
+                      className="action-btn edit-btn" 
                       onClick={() => handleEdit(store.id)}
-                      className="action-button edit-button"
-                      title="Edit Store"
-                      aria-label="Edit Store"
                     >
-                      <EditIcon size={16} />
-                      <span>Edit</span>
+                      Edit
                     </button>
-                    <button
+                    <button 
+                      className="action-btn delete-btn" 
                       onClick={() => handleDelete(store.id)}
-                      className="action-button delete-button"
-                      title="Delete Store"
-                      aria-label="Delete Store"
                     >
-                      <DeleteIcon size={16} />
-                      <span>Delete</span>
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -258,11 +250,9 @@ export default function Stores() {
                   onClick={handleModalClose}
                   className="cancel-button"
                 >
-                  <CancelIcon size={16} />
                   <span>Cancel</span>
                 </button>
                 <button type="submit" className="save-button">
-                  <SaveIcon size={16} />
                   <span>{isEditMode ? 'Update' : 'Save'}</span>
                 </button>
               </div>
@@ -292,7 +282,6 @@ export default function Stores() {
                   onClick={cancelDelete}
                   className="cancel-button"
                 >
-                  <CancelIcon size={16} />
                   <span>Cancel</span>
                 </button>
                 <button
@@ -300,7 +289,6 @@ export default function Stores() {
                   onClick={confirmDelete}
                   className="delete-confirm-button"
                 >
-                  <DeleteIcon size={16} />
                   <span>Delete</span>
                 </button>
               </div>

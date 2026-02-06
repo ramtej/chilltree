@@ -93,64 +93,103 @@ const defaultOrders = [
     {
       id: 'ORD-001',
       customer: 'John Smith',
+      product: 'Energy Shots',
       amount: '$124.99',
-      status: 'Pending',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-002',
       customer: 'Sarah Johnson',
+      product: 'Pills',
       amount: '$89.50',
-      status: 'Completed',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-003',
       customer: 'Michael Brown',
+      product: 'Energy Shots',
       amount: '$156.75',
-      status: 'Pending',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Pending'
     },
     {
       id: 'ORD-004',
       customer: 'Emily Davis',
+      product: 'Pills',
       amount: '$67.25',
-      status: 'Completed',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-005',
       customer: 'David Wilson',
+      product: 'Energy Shots',
       amount: '$234.00',
-      status: 'Completed',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-006',
       customer: 'Jessica Martinez',
+      product: 'Pills',
       amount: '$98.50',
-      status: 'Pending',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Pending'
     },
     {
       id: 'ORD-007',
       customer: 'Robert Taylor',
+      product: 'Energy Shots',
       amount: '$145.99',
-      status: 'Completed',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-008',
-      customer: 'Amanda Anderson',
+      customer: 'Michelle White',
+      product: 'Pills',
       amount: '$78.25',
-      status: 'Pending',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-009',
       customer: 'Christopher Lee',
+      product: 'Energy Shots',
       amount: '$189.75',
-      status: 'Completed',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
     {
       id: 'ORD-010',
-      customer: 'Michelle White',
+      customer: 'Amanda Anderson',
+      product: 'Pills',
       amount: '$112.00',
-      status: 'Completed',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
     },
-];
+    {
+      id: 'ORD-011',
+      customer: 'Daniel Martinez',
+      product: 'Energy Shots',
+      amount: '$234.00',
+      paymentStatus: 'Paid',
+      date: new Date().toISOString().split('T')[0],
+      status: 'Completed'
+    }
+  ];
 
 const defaultSubscriptions = [
     {
@@ -390,6 +429,14 @@ export const AdminProvider = ({ children }) => {
     setOrders(orders.map((o) => (o.id === id ? { ...o, status } : o)));
   };
 
+  const handleStatusChange = (id, status) => {
+    setOrders(orders.map((o) => (o.id === id ? { ...o, status } : o)));
+  };
+
+  const setOrdersList = (newOrders) => {
+    setOrders(newOrders);
+  };
+
   // Subscriptions CRUD
   const toggleSubscription = (id) => {
     setSubscriptions(
@@ -447,6 +494,7 @@ export const AdminProvider = ({ children }) => {
     deleteProduct,
     // Orders functions
     updateOrderStatus,
+    setOrdersList,
     // Subscriptions functions
     toggleSubscription,
     // Labs functions

@@ -64,6 +64,51 @@
     width: 100%;
     justify-content: center;
   }
+
+  .actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: var(--brand-blue);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: var(--brand-blue-light);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
 }
 
 /* Modal Styles */
@@ -116,6 +161,25 @@
   font-size: 24px;
   font-weight: 600;
   color: #ffffff;
+}
+
+.stores-header {
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #C0C0C0;
+}
+
+.stores-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stores-header p {
+  font-size: 15px;
+  color: #808080;
+  font-weight: 500;
 }
 
 .modal-close {

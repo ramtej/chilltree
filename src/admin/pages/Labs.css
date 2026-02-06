@@ -21,8 +21,8 @@
 .labs-header p {
   margin: 0;
   font-size: 15px;
-  color: var(--admin-blue-muted);
-  font-weight: 400;
+  color: #808080;
+  font-weight: 500;
 }
 
 .upload-button {
