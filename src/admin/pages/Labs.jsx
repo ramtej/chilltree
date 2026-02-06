@@ -3,6 +3,7 @@ import { useAdmin } from '../context/AdminContext';
 import { useToast } from '../context/ToastContext';
 import { ViewIcon, DeleteIcon, UploadIcon, CloseIcon, CancelIcon } from '../components/Icons';
 import './Labs.css';
+import '../admin-variables.css';
 
 export default function Labs() {
   const { labReports, addLabReport, deleteLabReport } = useAdmin();

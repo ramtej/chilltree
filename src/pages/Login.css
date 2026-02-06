@@ -1,4 +1,5 @@
-/* Login — same format as Home */
+/* Login — Amazon-Style Dark Theme with Cyan Accents */
+
 .login-page {
   min-height: calc(100vh - 180px);
   display: flex;
@@ -6,32 +7,31 @@
   justify-content: center;
   padding: 2rem;
   padding-top: 7rem;
-  background: var(--page-bg);
+  background: #071426;
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .login-card {
   width: 100%;
   max-width: 400px;
-  background: var(--surface);
-  border-radius: var(--radius);
+  background: #0B2C5D;
+  border-radius: 8px;
   padding: 2.5rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--brand-silver-light);
+  border: 1px solid rgba(230, 230, 230, 0.12);
 }
 
 .login-title {
   margin: 0 0 0.5rem;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--brand-blue);
+  color: #ffffff;
   text-align: center;
 }
 
 .login-subtitle {
   margin: 0 0 2rem;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: rgba(230, 230, 230, 0.7);
   text-align: center;
 }
 
@@ -48,23 +48,29 @@
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--brand-blue);
+  color: #ffffff;
 }
 
 .login-form input {
   width: 100%;
   padding: 0.875rem 1rem;
   font-size: 1rem;
-  border: 1px solid var(--brand-silver-light);
-  border-radius: 8px;
+  border: 1px solid rgba(230, 230, 230, 0.12);
+  border-radius: 4px;
   outline: none;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: all 0.2s ease;
   font-family: inherit;
+  background: #071426;
+  color: #ffffff;
 }
 
 .login-form input:focus {
-  border-color: var(--brand-gold);
-  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+  border-color: #00FFFF;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.15);
+}
+
+.login-form input::placeholder {
+  color: rgba(230, 230, 230, 0.5);
 }
 
 .login-submit {
@@ -72,18 +78,22 @@
   padding: 0.875rem 1.5rem;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--brand-blue);
-  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+  color: #071426;
+  background: #00FFFF;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
-  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.35);
+  transition: all 0.2s ease;
   font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .login-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.45);
-  filter: brightness(1.05);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+}
+
+.login-submit:active {
+  transform: translateY(0);
 }

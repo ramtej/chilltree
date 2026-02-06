@@ -1,0 +1,27 @@
+/* Admin Old Blue Color Format - Classic Tech Blue System */
+
+:root {
+  /* Classic Tech Blue Palette */
+  --admin-blue-deep: #0a1628;
+  --admin-blue-primary: #0f3460;
+  --admin-blue-mid: #1a4d7a;
+  --admin-blue-light: #2563eb;
+  --admin-blue-muted: rgba(15, 52, 96, 0.08);
+  
+  /* Hero Background - Classic Blue Gradient */
+  --hero-bg: linear-gradient(152deg, #0a1628 0%, #0f3460 35%, #1a4d7a 65%, #0f3460 100%);
+  
+  /* Brand Blue System */
+  --brand-blue: #0f3460;
+  --brand-blue-mid: #1a4d7a;
+  --brand-blue-light: #2563eb;
+  --brand-blue-muted: rgba(15, 52, 96, 0.08);
+  
+  /* Admin Specific Colors */
+  --admin-sidebar-bg: var(--admin-blue-primary);
+  --admin-text-primary: #ffffff;
+  --admin-text-secondary: rgba(255, 255, 255, 0.8);
+  --admin-border: rgba(255, 255, 255, 0.1);
+  --admin-hover: rgba(255, 255, 255, 0.08);
+  --admin-active: rgba(37, 99, 235, 0.15);
+}

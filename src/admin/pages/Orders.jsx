@@ -1,6 +1,7 @@
 import { useAdmin } from '../context/AdminContext';
 import { useToast } from '../context/ToastContext';
 import './Orders.css';
+import '../admin-variables.css';
 
 export default function Orders() {
   const { orders, updateOrderStatus } = useAdmin();

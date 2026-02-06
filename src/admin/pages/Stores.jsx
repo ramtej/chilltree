@@ -4,6 +4,7 @@ import { useToast } from '../context/ToastContext';
 import { EditIcon, DeleteIcon, AddIcon, SaveIcon, CancelIcon, CloseIcon } from '../components/Icons';
 import '../components/adminTable.css';
 import './Stores.css';
+import '../admin-variables.css';
 
 export default function Stores() {
   const { stores, addStore, updateStore, deleteStore } = useAdmin();

@@ -10,14 +10,13 @@
   margin: 0 0 8px 0;
   font-size: 32px;
   font-weight: 600;
-  color: var(--brand-blue);
-  letter-spacing: -0.5px;
+  color: #ffffff;
 }
 
 .orders-header p {
   margin: 0;
   font-size: 15px;
-  color: #808080;
+  color: var(--admin-blue-muted);
   font-weight: 400;
 }
 
@@ -35,8 +34,7 @@
 }
 
 .orders-table thead {
-  background: #E8E8E8;
-  border-bottom: 2px solid #C0C0C0;
+  border-bottom: 2px solid var(--admin-blue-primary);
 }
 
 .orders-table th {
@@ -50,12 +48,12 @@
 }
 
 .orders-table tbody tr {
-  border-bottom: 1px solid #C0C0C0;
+  border-bottom: 1px solid var(--admin-blue-muted);
   transition: background-color 0.2s ease;
 }
 
 .orders-table tbody tr:hover {
-  background-color: #E8E8E8;
+  background-color: var(--admin-blue-muted);
 }
 
 .orders-table tbody tr:last-child {

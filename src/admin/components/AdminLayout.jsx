@@ -1,5 +1,6 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import './AdminLayout.css';
+import '../admin-variables.css';
 
 export default function AdminLayout() {
   const navigate = useNavigate();

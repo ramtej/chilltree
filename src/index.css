@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: var(--text-primary);
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  
 }
 
 h1 {

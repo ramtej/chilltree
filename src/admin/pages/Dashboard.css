@@ -10,8 +10,7 @@
   margin: 0 0 8px 0;
   font-size: 32px;
   font-weight: 600;
-  color: var(--brand-blue);
-  letter-spacing: -0.5px;
+  color: #ffffff;
 }
 
 .dashboard-header p {

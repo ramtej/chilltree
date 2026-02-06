@@ -6,9 +6,12 @@ import "./Products.css";
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedSubcategory, setSelectedSubcategory] = useState("All");
-  const [sortBy, setSortBy] = useState("featured");
+  const [sortBy, setSortBy] = useState("name-asc");
   const [priceRange, setPriceRange] = useState("all");
-  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const [availability, setAvailability] = useState("all");
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [activeFiltersCount, setActiveFiltersCount] = useState(0);
+  const [style, setStyle] = useState([]);
 
   const getProductCategory = (product) => {
     return product.category || "Energy Shots";
@@ -30,10 +33,9 @@ export default function Products() {
   ];
 
   const sortOptions = [
-    { value: "featured", label: "Featured" },
+    { value: "name-asc", label: "Name: A to Z" },
     { value: "price-low", label: "Price: Low to High" },
     { value: "price-high", label: "Price: High to Low" },
-    { value: "name", label: "Name" }
   ];
   const priceRanges = [
     { value: "all", label: "All Prices" },
@@ -44,6 +46,27 @@ export default function Products() {
 
   const getFilteredAndSortedProducts = () => {
     let filtered = products;
+
+    // Availability filter
+    if (availability !== "all") {
+      filtered = filtered.filter(product => {
+        if (availability === "in-stock") return product.inStock !== false;
+        if (availability === "out-of-stock") return product.inStock === false;
+        return true;
+      });
+    }
+
+    // Style filter
+    if (style.length > 0) {
+      filtered = filtered.filter(product => {
+        return style.some(s => {
+          if (s === "traditional") return product.name.toLowerCase().includes("traditional");
+          if (s === "modern") return product.name.toLowerCase().includes("modern");
+          if (s === "organic") return product.name.toLowerCase().includes("organic");
+          return false;
+        });
+      });
+    }
 
     // Category filter
     if (selectedCategory !== "All") {
@@ -67,10 +90,10 @@ export default function Products() {
 
     // Sort
     const sorted = [...filtered].sort((a, b) => {
+      if (sortBy === "name-asc") return a.name.localeCompare(b.name);
       if (sortBy === "price-low") return a.price - b.price;
       if (sortBy === "price-high") return b.price - a.price;
-      if (sortBy === "name") return a.name.localeCompare(b.name);
-      return a.id - b.id; // featured default
+      return a.id - b.id;
     });
 
     return sorted;
@@ -78,34 +101,35 @@ export default function Products() {
 
   const filteredProducts = getFilteredAndSortedProducts();
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    setSelectedSubcategory("All");
-    setIsCategoryDropdownOpen(false);
-  };
-
-  const handleSubcategorySelect = (subcategory) => {
-    setSelectedSubcategory(subcategory);
-    setIsCategoryDropdownOpen(false);
+  const calculateActiveFiltersCount = () => {
+    let count = 0;
+    if (availability !== "all") count++;
+    if (selectedCategory !== "All") count++;
+    if (selectedSubcategory !== "All") count++;
+    if (priceRange !== "all") count++;
+    if (style.length > 0) count++;
+    setActiveFiltersCount(count);
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const cards = document.querySelectorAll('.product-card');
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        if (isVisible) {
-          card.style.animationDelay = `${index * 0.1}s`;
-          card.classList.add('fade-in-up');
-        }
-      });
-    };
+    calculateActiveFiltersCount();
+  }, [availability, selectedCategory, selectedSubcategory, priceRange, style]);
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [filteredProducts]);
+  const clearAllFilters = () => {
+    setAvailability("all");
+    setSelectedCategory("All");
+    setSelectedSubcategory("All");
+    setPriceRange("all");
+    setStyle([]);
+  };
+
+  const handleStyleChange = (styleValue) => {
+    setStyle(prev => 
+      prev.includes(styleValue) 
+        ? prev.filter(s => s !== styleValue)
+        : [...prev, styleValue]
+    );
+  };
 
   return (
     <div className="products-page">
@@ -126,89 +150,162 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Filter Bar */}
-      <section className="products-filter-section">
-        <div className="products-inner">
-          <div className="filter-bar">
-            <div className="filter-left">
-              <div className="filter-group">
-                <label className="filter-label">Availability</label>
-                <select className="filter-select">
-                  <option>In Stock</option>
-                  <option>Out of Stock</option>
-                  <option>All</option>
-                </select>
-              </div>
-
-              <div className="filter-group">
-                <label className="filter-label">Price</label>
-                <select 
-                  className="filter-select"
-                  value={priceRange}
-                  onChange={(e) => setPriceRange(e.target.value)}
-                >
-                  {priceRanges.map(range => (
-                    <option key={range.value} value={range.value}>
-                      {range.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="filter-group">
-                <label className="filter-label">Product Type</label>
-                <div 
-                  className="category-dropdown"
-                  onMouseEnter={() => setIsCategoryDropdownOpen(true)}
-                  onMouseLeave={() => setIsCategoryDropdownOpen(false)}
-                >
-                  <div className="category-selected">
-                    {selectedCategory === "All" ? "All Products" : selectedCategory}
-                    <span className="dropdown-arrow">▼</span>
-                  </div>
-                  
-                  {isCategoryDropdownOpen && (
-                    <div className="category-dropdown-menu">
-                      <div className="dropdown-section">
-                        <div className="dropdown-title">Categories</div>
-                        {categories.map((category) => (
-                          <div 
-                            key={category.name}
-                            className="dropdown-item category-item"
-                            onClick={() => handleCategorySelect(category.name)}
-                          >
-                            {category.name}
-                          </div>
-                        ))}
-                      </div>
-                      
-                      {selectedCategory !== "All" && (
-                        <div className="dropdown-section">
-                          <div className="dropdown-title">Subcategories</div>
-                          {categories
-                            .find(cat => cat.name === selectedCategory)
-                            ?.subcategories.map((subcategory) => (
-                              <div 
-                                key={subcategory}
-                                className="dropdown-item subcategory-item"
-                                onClick={() => handleSubcategorySelect(subcategory)}
-                              >
-                                {subcategory}
-                              </div>
-                            ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
+      {/* Amazon-Style Layout */}
+      <div className="amazon-layout">
+        {/* Left Sidebar - Filters */}
+        <aside className={`filters-sidebar ${isMobileFilterOpen ? 'mobile-open' : ''}`}>
+          <div className="filters-header">
+            <h2>Filters</h2>
+            <button className="filters-close" onClick={() => setIsMobileFilterOpen(false)}>
+              ×
+            </button>
+          </div>
+          
+          <div className="filters-content">
+            {/* Availability Filter */}
+            <div className="filter-section">
+              <h3>Availability</h3>
+              <div className="filter-options">
+                <label className="filter-option">
+                  <input
+                    type="radio"
+                    name="availability"
+                    value="all"
+                    checked={availability === "all"}
+                    onChange={(e) => setAvailability(e.target.value)}
+                  />
+                  <span>All Products</span>
+                </label>
+                <label className="filter-option">
+                  <input
+                    type="radio"
+                    name="availability"
+                    value="in-stock"
+                    checked={availability === "in-stock"}
+                    onChange={(e) => setAvailability(e.target.value)}
+                  />
+                  <span>In Stock</span>
+                </label>
+                <label className="filter-option">
+                  <input
+                    type="radio"
+                    name="availability"
+                    value="out-of-stock"
+                    checked={availability === "out-of-stock"}
+                    onChange={(e) => setAvailability(e.target.value)}
+                  />
+                  <span>Out of Stock</span>
+                </label>
               </div>
             </div>
 
-            <div className="filter-right">
-              <div className="filter-group">
-                <label className="filter-label">Sort by</label>
+            {/* Price Range Filter */}
+            <div className="filter-section">
+              <h3>Price Range</h3>
+              <div className="filter-options">
+                {priceRanges.map(range => (
+                  <label key={range.value} className="filter-option">
+                    <input
+                      type="radio"
+                      name="price"
+                      value={range.value}
+                      checked={priceRange === range.value}
+                      onChange={(e) => setPriceRange(e.target.value)}
+                    />
+                    <span>{range.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Product Type Filter */}
+            <div className="filter-section">
+              <h3>Product Type</h3>
+              <div className="filter-options">
+                <label className="filter-option">
+                  <input
+                    type="radio"
+                    name="category"
+                    value="All"
+                    checked={selectedCategory === "All"}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                  />
+                  <span>All Products</span>
+                </label>
+                {categories.map((category) => (
+                  <label key={category.name} className="filter-option">
+                    <input
+                      type="radio"
+                      name="category"
+                      value={category.name}
+                      checked={selectedCategory === category.name}
+                      onChange={(e) => setSelectedCategory(e.target.value)}
+                    />
+                    <span>{category.name}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Style Filter */}
+            <div className="filter-section">
+              <h3>Style</h3>
+              <div className="filter-options">
+                <label className="filter-option">
+                  <input 
+                    type="checkbox" 
+                    checked={style.includes("traditional")}
+                    onChange={() => handleStyleChange("traditional")}
+                  />
+                  <span>Traditional</span>
+                </label>
+                <label className="filter-option">
+                  <input 
+                    type="checkbox" 
+                    checked={style.includes("modern")}
+                    onChange={() => handleStyleChange("modern")}
+                  />
+                  <span>Modern</span>
+                </label>
+                <label className="filter-option">
+                  <input 
+                    type="checkbox" 
+                    checked={style.includes("organic")}
+                    onChange={() => handleStyleChange("organic")}
+                  />
+                  <span>Organic</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Clear Filters */}
+            {activeFiltersCount > 0 && (
+              <button className="clear-filters-btn" onClick={clearAllFilters}>
+                Clear All Filters ({activeFiltersCount})
+              </button>
+            )}
+          </div>
+        </aside>
+
+        {/* Main Content */}
+        <main className="main-content">
+          {/* Top Bar - Sorting */}
+          <div className="top-bar">
+            <div className="top-bar-left">
+              <button 
+                className="mobile-filter-btn"
+                onClick={() => setIsMobileFilterOpen(true)}
+              >
+                Filter
+                {activeFiltersCount > 0 && (
+                  <span className="filter-count">{activeFiltersCount}</span>
+                )}
+              </button>
+            </div>
+            <div className="top-bar-right">
+              <div className="sort-dropdown">
+                <label>Sort by</label>
                 <select 
-                  className="filter-select"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
@@ -224,38 +321,23 @@ export default function Products() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Products Grid - Circular Carousel */}
-      <section className="products-grid-section">
-        <div className="products-inner">
-          <div className="circular-carousel">
-            <div className="carousel-container">
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((product, index) => (
-                  <div 
-                    key={product.id} 
-                    className="carousel-card"
-                    style={{ 
-                      '--card-index': index,
-                      '--total-cards': filteredProducts.length
-                    }}
-                  >
-                    <ProductCard product={product} index={index} />
-                  </div>
-                ))
-              ) : (
-                <div className="products-empty">
-                  <div className="empty-icon">🔍</div>
-                  <h3>No products found</h3>
-                  <p>Try adjusting your filters to see more results</p>
-                </div>
-              )}
-            </div>
+          {/* Product Grid */}
+          <div className="products-grid">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} index={index} />
+              ))
+            ) : (
+              <div className="products-empty">
+                <div className="empty-icon">🔍</div>
+                <h3>No products found</h3>
+                <p>Try adjusting your filters to see more results</p>
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </main>
+      </div>
     </div>
   );
 }

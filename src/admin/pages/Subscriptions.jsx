@@ -1,6 +1,7 @@
 import { useAdmin } from '../context/AdminContext';
 import { useToast } from '../context/ToastContext';
 import './Subscriptions.css';
+import '../admin-variables.css';
 
 export default function Subscriptions() {
   const { subscriptions, toggleSubscription } = useAdmin();

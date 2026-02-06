@@ -15,14 +15,13 @@
   margin: 0 0 8px 0;
   font-size: 32px;
   font-weight: 600;
-  color: var(--brand-blue);
-  letter-spacing: -0.5px;
+  color: #ffffff;
 }
 
 .labs-header p {
   margin: 0;
   font-size: 15px;
-  color: #808080;
+  color: var(--admin-blue-muted);
   font-weight: 400;
 }
 
@@ -98,7 +97,6 @@
 }
 
 .labs-table thead {
-  background: #E8E8E8;
   border-bottom: 2px solid #C0C0C0;
 }
 
@@ -343,7 +341,7 @@
   margin: 0;
   font-size: 24px;
   font-weight: 600;
-  color: #1976D2;
+  color: #ffffff;
 }
 
 .modal-close {

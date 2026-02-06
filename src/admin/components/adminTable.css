@@ -1,14 +1,15 @@
 /* Shared admin table and header styles for admin pages */
+@import '../admin-variables.css';
 
 .page-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
-  color: #123a63;
+  color: var(--admin-blue-primary);
 }
 
 .page-subtitle {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--admin-blue-muted);
   margin-bottom: 16px;
 }
 
@@ -188,39 +189,43 @@
 }
 
 .edit-button {
-  background: rgba(33, 150, 243, 0.08);
-  color: var(--brand-blue-light, #2196f3);
-  border-color: rgba(33, 150, 243, 0.2);
+  background: linear-gradient(135deg, var(--admin-blue-light) 0%, var(--admin-blue-mid) 100%);
+  color: #ffffff;
+  border-color: var(--admin-blue-primary);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .edit-button:hover {
-  background: rgba(33, 150, 243, 0.15);
-  border-color: rgba(33, 150, 243, 0.4);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+  background: linear-gradient(135deg, var(--admin-blue-mid) 0%, var(--admin-blue-primary) 100%);
+  border-color: var(--admin-blue-deep);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .edit-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(33, 150, 243, 0.2);
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  transition: all 0.1s ease;
 }
 
 .delete-button {
-  background: rgba(255, 160, 0, 0.08);
-  color: #ffa000;
-  border-color: rgba(255, 160, 0, 0.2);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  color: #ffffff;
+  border-color: #ff4444;
+  box-shadow: 0 2px 8px rgba(255, 82, 82, 0.2);
 }
 
 .delete-button:hover {
-  background: rgba(255, 160, 0, 0.15);
-  border-color: rgba(255, 160, 0, 0.4);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(255, 160, 0, 0.2);
+  background: linear-gradient(135deg, #ff5252 0%, #ff4444 100%);
+  border-color: #ff3333;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 82, 82, 0.3);
 }
 
 .delete-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(255, 160, 0, 0.2);
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(255, 82, 82, 0.2);
+  transition: all 0.1s ease;
 }
 
 /* Empty state styles (used by stores and potentially others) */

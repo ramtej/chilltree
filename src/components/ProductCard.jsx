@@ -4,7 +4,6 @@ import "./ProductCard.css";
 
 export default function ProductCard({ product, index }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -18,50 +17,42 @@ export default function ProductCard({ product, index }) {
     console.log("Quick add:", product.id);
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    // Start image carousel
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
-    }, 1500);
+  const formatReviews = (count) => {
+    if (count >= 1000) {
+      return `${(count / 1000).toFixed(1)}K`;
+    }
+    return count.toString();
+  };
+
+  const calculateDiscount = () => {
+    if (!product.originalPrice) return 0;
+    return Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+  };
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
     
-    const card = document.getElementById(`product-card-${product.id}`);
-    if (card) {
-      card.imageInterval = interval;
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setCurrentImageIndex(0);
-    // Clear image carousel interval
-    const card = document.getElementById(`product-card-${product.id}`);
-    if (card && card.imageInterval) {
-      clearInterval(card.imageInterval);
-    }
-  };
-
-  const productImages = [
-    product.image,
-    product.image.replace('.png', '-alt.png'),
-    product.image.replace('.png', '-detail.png')
-  ].filter((img, i, arr) => arr.indexOf(img) === i); // Remove duplicates
-
-  const regularPrice = product.price;
-  const subscribePrice = (product.price * 0.75).toFixed(2);
-  const savings = ((1 - 0.75) * 100).toFixed(0);
-
-  const getSubcategory = (product) => {
-    return product.subcategory || "All";
+    return (
+      <span className="stars">
+        {Array(fullStars).fill('★').map((star, i) => (
+          <span key={`full-${i}`} className="star full">{star}</span>
+        ))}
+        {hasHalfStar && <span className="star half">★</span>}
+        {Array(emptyStars).fill('☆').map((star, i) => (
+          <span key={`empty-${i}`} className="star empty">{star}</span>
+        ))}
+      </span>
+    );
   };
 
   return (
     <Link 
       to={`/product/${product.id}`} 
       className="product-card"
-      id={`product-card-${product.id}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{ 
         animationDelay: `${index * 0.1}s`,
         '--card-index': index
@@ -69,32 +60,19 @@ export default function ProductCard({ product, index }) {
     >
       {/* Product Image Container */}
       <div className="product-image-container">
-        <div className="product-image-wrapper">
-          <img
-            src={productImages[currentImageIndex] || product.image}
-            alt={product.name}
-            className="product-image"
-            loading="lazy"
-          />
-          
-          {/* Image Carousel Indicators */}
-          {productImages.length > 1 && (
-            <div className="image-indicators">
-              {productImages.map((_, idx) => (
-                <div 
-                  key={idx}
-                  className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
-                />
-              ))}
-            </div>
-          )}
-        </div>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="product-image"
+          loading="lazy"
+        />
         
-        {/* Subscribe & Save Badge */}
-        <div className="subscribe-badge">
-          <span className="badge-text">Save {savings}%</span>
-          <span className="badge-subtitle">Subscribe</span>
-        </div>
+        {/* Badge */}
+        {product.badge && (
+          <div className="product-badge">
+            {product.badge}
+          </div>
+        )}
         
         {/* Quick Actions Overlay */}
         <div className={`quick-actions ${isHovered ? 'visible' : ''}`}>
@@ -108,43 +86,54 @@ export default function ProductCard({ product, index }) {
         </div>
       </div>
       
-      {/* Product Content */}
+      {/* Product Content - Amazon Style */}
       <div className="product-content">
-        <div className="product-header">
-          <h3 className="product-title">{product.name}</h3>
-          <p className="product-description">{product.description}</p>
-        </div>
+        {/* 1. PRODUCT TITLE */}
+        <h3 className="product-title">{product.name}</h3>
         
-        {/* Subcategories */}
-        <div className="product-subcategories">
-          {getSubcategory(product) !== "All" && (
-            <div className="subcategory-list">
-              <span className="subcategory-label">Subcategories:</span>
-              <div className="subcategory-items">
-                <span className="subcategory-item">{getSubcategory(product)}</span>
-              </div>
+        {/* 2. RATING ROW */}
+        {product.rating && product.reviews && (
+          <div className="rating-row">
+            {renderStars(product.rating)}
+            <span className="rating-number">{product.rating}</span>
+            <span className="reviews-count">({formatReviews(product.reviews)} reviews)</span>
+          </div>
+        )}
+        
+        {/* 3. SOCIAL PROOF */}
+        {product.socialProof && (
+          <div className="social-proof">
+            {product.socialProof}
+          </div>
+        )}
+        
+        {/* 4. BADGE (already shown in image corner) */}
+        
+        {/* 5. PRICE BLOCK */}
+        <div className="price-block">
+          <div className="current-price">${product.price.toFixed(2)}</div>
+          {product.originalPrice && (
+            <div className="original-price-row">
+              <span className="original-price">M.R.P: ${product.originalPrice.toFixed(2)}</span>
+              <span className="discount">({calculateDiscount()}% off)</span>
             </div>
           )}
         </div>
-
-        {/* Product Pricing */}
-        <div className="product-pricing">
-          <div className="price-row">
-            <span className="current-price">${regularPrice.toFixed(2)}</span>
-            <span className="subscribe-price">${subscribePrice}</span>
-            <span className="savings-badge">Save {savings}%</span>
+        
+        {/* 6. DELIVERY / BENEFIT TEXT */}
+        {product.delivery && (
+          <div className="delivery-text">
+            {product.delivery}
           </div>
-        </div>
-
-        {/* Product Actions */}
-        <div className="product-actions">
-          <button 
-            className="add-to-cart-btn"
-            onClick={handleAddToCart}
-          >
-            Add to Cart
-          </button>
-        </div>
+        )}
+        
+        {/* Add to Cart Button */}
+        <button 
+          className="add-to-cart-btn"
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
       </div>
     </Link>
   );

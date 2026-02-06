@@ -1,4 +1,5 @@
 import './Dashboard.css';
+import '../admin-variables.css';
 
 export default function Dashboard() {
   const stats = [
