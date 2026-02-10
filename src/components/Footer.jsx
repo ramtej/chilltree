@@ -49,7 +49,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Column 2: Navigation */}
+        {/* Column 2: Quick Links */}
         <div>
           <h3
             style={{
@@ -61,7 +61,7 @@ export default function Footer() {
               margin: "0 0 1rem 0",
             }}
           >
-            Navigation
+            Quick Links
           </h3>
           <nav style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <Link
@@ -103,6 +103,24 @@ export default function Footer() {
             >
               Subscribe
             </Link>
+          </nav>
+        </div>
+
+        {/* Column 3: Company */}
+        <div>
+          <h3
+            style={{
+              fontSize: "0.75rem",
+              fontWeight: "700",
+              color: "#E5E7EB",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              margin: "0 0 1rem 0",
+            }}
+          >
+            Company
+          </h3>
+          <nav style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <Link
               to="/about"
               style={{

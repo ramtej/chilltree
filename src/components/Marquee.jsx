@@ -5,10 +5,10 @@ const Marquee = () => {
   return (
     <div className="marquee-container">
       <div className="marquee-line marquee-left">
-        <span>CLEAN ENERGY • ABSOLUTE FOCUS • AWARD WINNING • CLEAN ENERGY • ABSOLUTE FOCUS • AWARD WINNING •</span>
+        <span>CLEAN ENERGY • ABSOLUTE FOCUS • CLEAN ENERGY • ABSOLUTE FOCUS • CLEAR MIND • MAXIMUM ENERGY • PURE DRIVE • ABSOLUTE CLARITY •</span>
       </div>
       <div className="marquee-line marquee-right">
-        <span>10000+ ORDERS • SUBSCRIBE & SAVE • LAB TESTED • 10000+ ORDERS • SUBSCRIBE & SAVE • LAB TESTED •</span>
+        <span>10000+ ORDERS • SUBSCRIBE & SAVE • LAB TESTED • 10000+ ORDERS • SUBSCRIBE & SAVE • LAB TESTED • TRUSTED BY THOUSANDS • PREMIUM FORMULA</span>
       </div>
     </div>
   );
